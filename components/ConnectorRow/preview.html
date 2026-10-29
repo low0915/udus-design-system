@@ -1,0 +1,21 @@
+<!-- @dsCard group="AI" height=140 subtitle="A system the agent is bound to" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ConnectorRow — preview</title>
+<style>
+  body{margin:0;padding:20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .col{display:flex;flex-direction:column;gap:14px;width:100%}
+  .cap{margin-top:8px;text-align:center;font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-variant)}
+  .row .cap{text-align:center}
+  .sep{display:inline-block;width:1px;height:20px;background:var(--surface-variant)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { ConnectorRow } = window.SuDuAI;
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement("div", { className: "col", style: { gap: 8, maxWidth: 360 } }, /* @__PURE__ */ React.createElement(ConnectorRow, { icon: "database", name: "Postgres Ledger DB", detail: "pool: gl-master-eu", meta: ["Ping: 1.2ms", "SSL/mTLS Valid"], state: "Connected" }), /* @__PURE__ */ React.createElement(ConnectorRow, { icon: "hub", name: "NetSuite Bridge", detail: "Subsidiary: EU-01", meta: ["Records: 84,290"], state: "Active", iconColor: "var(--tertiary)" })));
+</script>
+</body>
+</html>

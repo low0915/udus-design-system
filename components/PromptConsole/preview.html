@@ -1,0 +1,26 @@
+<!-- @dsCard group="Forms" height=220 subtitle="The pinned composer" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>PromptConsole — preview</title>
+<style>
+  body{margin:0;padding:20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .col{display:flex;flex-direction:column;gap:14px;width:100%}
+  .cap{margin-top:8px;text-align:center;font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-variant)}
+  .row .cap{text-align:center}
+  .sep{display:inline-block;width:1px;height:20px;background:var(--surface-variant)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { PromptConsole } = window.SuDuAI;
+function Demo() {
+  const [v, setV] = React.useState("");
+  const [caps, setCaps] = React.useState([{ id: "research", label: "Deep Research", icon: "auto_awesome", active: true }, { id: "code", label: "Code Interpreter", icon: "code", active: true }, { id: "web", label: "Web Browsing", icon: "language", active: false }]);
+  return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 780 } }, /* @__PURE__ */ React.createElement(PromptConsole, { value: v, onChange: (e) => setV(e.target.value), onSubmit: () => setV(""), capabilities: caps, onToggleCapability: (id) => setCaps((cs) => cs.map((c) => c.id === id ? { ...c, active: !c.active } : c)) }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(Demo, null));
+</script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!-- @dsCard group="Workspace" height=900 width=1440 page subtitle="Click-through recreation of the SuDu AI agent workspace" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Chat Workspace</title>
+<style>html,body{height:100%}body{margin:0;background:var(--surface);background-image:var(--mesh-ambient)}#root{min-height:100vh}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+(function() {
+  const { NavItem, Button, IconButton, Breadcrumb, StatusPill, MetricCapsule, Icon, Logo } = window.SuDuAI;
+  function Sidebar({ route, onNavigate }) {
+    return /* @__PURE__ */ React.createElement("aside", { style: {
+      position: "fixed",
+      left: 0,
+      top: 0,
+      height: "100%",
+      width: "var(--rail-width)",
+      zIndex: 50,
+      background: "color-mix(in srgb,var(--surface-container-low) 90%,transparent)",
+      backdropFilter: "blur(20px)",
+      boxShadow: "var(--shadow-hairline)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      padding: "var(--space-md)"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-lg)" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 var(--space-xs)" } }, /* @__PURE__ */ React.createElement(Logo, { height: 22, color: "var(--on-surface)" }), /* @__PURE__ */ React.createElement(IconButton, { icon: "dock_to_left", size: 20, variant: "bare", title: "Collapse rail" })), /* @__PURE__ */ React.createElement(Button, { variant: "primary", trailingIcon: "add", fullWidth: true }, "New Synthesis"), /* @__PURE__ */ React.createElement("nav", { style: { display: "flex", flexDirection: "column", gap: "var(--space-xs)" } }, [
+      ["chat", "chat_bubble", "Chat Workspace"],
+      ["agents", "smart_toy", "Agent Directory"],
+      ["orchestrator", "neurology", "Model Orchestrator"],
+      ["vault", "database", "Knowledge Vault"],
+      ["studio", "terminal", "Prompt Studio"]
+    ].map(([id, icon, label]) => /* @__PURE__ */ React.createElement(
+      NavItem,
+      {
+        key: id,
+        icon,
+        label,
+        active: route === id,
+        onClick: (e) => {
+          e.preventDefault();
+          onNavigate(id);
+        }
+      }
+    )))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-sm)", paddingTop: "var(--space-md)" } }, /* @__PURE__ */ React.createElement("div", { style: {
+      padding: "var(--space-sm)",
+      borderRadius: "var(--radius-control)",
+      background: "color-mix(in srgb,var(--surface-container) 60%,transparent)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement("span", { style: { width: 8, height: 8, borderRadius: "50%", background: "var(--primary-container)", boxShadow: "var(--glow-dot)" } }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("span", { style: { font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", textTransform: "uppercase", color: "var(--on-surface-variant)" } }, "Operational Engine"), /* @__PURE__ */ React.createElement("span", { style: { font: "500 12px/16px var(--font-core)", letterSpacing: ".06em", color: "var(--on-surface)" } }, "Quantum Mesh v4"))), /* @__PURE__ */ React.createElement("span", { style: { font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", padding: "2px 4px", borderRadius: "var(--radius-sm)", background: "var(--accent-wash)", color: "var(--text-accent)" } }, "99.9%")), /* @__PURE__ */ React.createElement(
+      NavItem,
+      {
+        icon: "settings",
+        label: "Workspace Settings",
+        active: route === "settings",
+        onClick: (e) => {
+          e.preventDefault();
+          onNavigate("settings");
+        }
+      }
+    )));
+  }
+  function TopBar({ crumbs, theme, onToggleTheme }) {
+    return /* @__PURE__ */ React.createElement("header", { style: {
+      position: "fixed",
+      top: 0,
+      left: "var(--rail-width)",
+      right: 0,
+      height: "var(--topbar-height)",
+      zIndex: 40,
+      background: "color-mix(in srgb,var(--surface) 80%,transparent)",
+      backdropFilter: "blur(20px)",
+      boxShadow: "var(--shadow-hairline)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "0 var(--space-lg)"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-md)" } }, /* @__PURE__ */ React.createElement(Breadcrumb, { items: crumbs }), /* @__PURE__ */ React.createElement(StatusPill, { status: "ok" }, "Agent Idle")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-md)" } }, /* @__PURE__ */ React.createElement(MetricCapsule, { icon: "memory", label: "Latency", value: "18ms", iconColor: "var(--on-surface-variant)" }), /* @__PURE__ */ React.createElement(
+      IconButton,
+      {
+        icon: theme === "light" ? "dark_mode" : "light_mode",
+        size: 20,
+        variant: "bare",
+        title: "Toggle theme",
+        onClick: onToggleTheme
+      }
+    ), /* @__PURE__ */ React.createElement(IconButton, { icon: "notifications", size: 20, variant: "bare", title: "Notifications" }), /* @__PURE__ */ React.createElement(IconButton, { icon: "share", size: 20, variant: "bare", title: "Share" }), /* @__PURE__ */ React.createElement("div", { style: {
+      width: 32,
+      height: 32,
+      borderRadius: "50%",
+      background: "var(--primary)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      boxShadow: "0 0 10px rgba(0,245,169,.2)"
+    } }, /* @__PURE__ */ React.createElement(Icon, { name: "person", size: 18, color: "var(--on-primary)" }))));
+  }
+  function AppShell2({ route, onNavigate, crumbs, theme, onToggleTheme, children }) {
+    return /* @__PURE__ */ React.createElement("div", { style: { minHeight: "100vh", background: "var(--surface)" } }, /* @__PURE__ */ React.createElement(Sidebar, { route, onNavigate }), /* @__PURE__ */ React.createElement("div", { style: { paddingLeft: "var(--rail-width)" } }, /* @__PURE__ */ React.createElement(TopBar, { crumbs, theme, onToggleTheme }), /* @__PURE__ */ React.createElement("main", { style: { width: "100%", paddingTop: "var(--topbar-height)" } }, children)));
+  }
+  Object.assign(window, { AppShell: AppShell2, Sidebar, TopBar });
+})();
+(function() {
+  const {
+    Icon,
+    IconButton,
+    Badge,
+    StatusPill,
+    MetricCapsule,
+    Card,
+    Disclosure,
+    CodeBlock,
+    UserMessage,
+    AgentMessage,
+    ReasoningStep,
+    ConnectorRow,
+    PromptConsole,
+    TabBar,
+    ProgressRing,
+    Sparkline,
+    Button
+  } = window.SuDuAI;
+  const LATENCY = [62, 58, 61, 55, 60, 57, 63, 24, 12, 8, 16, 35, 54, 58, 56];
+  const SCRIPT = `# Automatic zero-downtime pool clearing and Redis replica elevation
+import asyncio
+from sudu_swarm.cluster import PaymentFleetOrchestrator
+
+async def rebalance_db_pools(target_region="eu-west-1"):
+    orchestrator = PaymentFleetOrchestrator(region=target_region)
+    # Gracefully isolate degraded worker instances
+    await orchestrator.drain_idle_locks(max_wait_ms=250)
+    await orchestrator.expand_connection_limit(limit=1200, warm_cache=True)
+    return {"status": "OPTIMIZED", "p99_target_ms": 120}`;
+  function AgentBar({ inspectorOpen, onToggleInspector }) {
+    return /* @__PURE__ */ React.createElement("div", { style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "var(--space-sm) var(--space-lg)",
+      zIndex: 30,
+      background: "color-mix(in srgb,var(--surface-container-lowest) 80%,transparent)",
+      backdropFilter: "blur(12px)"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-md)", minWidth: 0 } }, /* @__PURE__ */ React.createElement("div", { style: {
+      position: "relative",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: 40,
+      height: 40,
+      borderRadius: "var(--radius-control)",
+      background: "var(--surface-container-high)",
+      boxShadow: "inset 0 2px 4px rgba(0,0,0,.3)"
+    } }, /* @__PURE__ */ React.createElement(Icon, { name: "smart_toy", size: 24, color: "var(--text-accent)" }), /* @__PURE__ */ React.createElement("span", { style: {
+      position: "absolute",
+      top: -4,
+      right: -4,
+      width: 12,
+      height: 12,
+      borderRadius: "50%",
+      background: "var(--primary-container)",
+      boxShadow: "var(--glow-dot)"
+    } })), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement("span", { style: { font: "600 20px/28px var(--font-core)", letterSpacing: "-0.01em", color: "var(--on-surface)" } }, "SuDu Agent Pro"), /* @__PURE__ */ React.createElement(Badge, null, "v4.2"), /* @__PURE__ */ React.createElement(StatusPill, { status: "ok", pulse: true }, "Autonomous Mode: Active")), /* @__PURE__ */ React.createElement("div", { style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "var(--space-md)",
+      marginTop: 2,
+      color: "var(--on-surface-variant)",
+      font: "600 10px/14px var(--font-core)",
+      letterSpacing: ".08em"
+    } }, /* @__PURE__ */ React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 } }, /* @__PURE__ */ React.createElement(Icon, { name: "timer", size: 14, color: "var(--tertiary-fixed-dim)" }), " Latency 24ms"), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--outline-variant)" } }, "•"), /* @__PURE__ */ React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 } }, /* @__PURE__ */ React.createElement(Icon, { name: "layers", size: 14, color: "var(--text-accent)" }), " Context: 128k / 200k tokens"), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--outline-variant)" } }, "•"), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--secondary-fixed)" } }, "Zero-shot Sandbox: Bound")))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement("button", { type: "button", style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "var(--space-sm)",
+      border: "none",
+      cursor: "pointer",
+      padding: "6px var(--space-md)",
+      borderRadius: "var(--radius-control)",
+      background: "var(--surface-container)",
+      textAlign: "left"
+    } }, /* @__PURE__ */ React.createElement(Icon, { name: "psychology", size: 18, color: "var(--text-accent)" }), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("span", { style: { display: "block", font: "600 12px/16px var(--font-core)", letterSpacing: ".06em", color: "var(--text-accent)" } }, "SuDu-Ultra-Reasoning"), /* @__PURE__ */ React.createElement("span", { style: { display: "block", font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", color: "var(--on-surface-variant)" } }, "Thinking Mode Enabled")), /* @__PURE__ */ React.createElement(Icon, { name: "expand_more", size: 18, color: "var(--on-surface-variant)" })), /* @__PURE__ */ React.createElement(MetricCapsule, { icon: "thermostat", value: "0.25" }), /* @__PURE__ */ React.createElement("span", { style: { width: 1, height: 24, background: "var(--surface-variant)", margin: "0 4px" } }), /* @__PURE__ */ React.createElement(IconButton, { icon: "download", title: "Export Transcript" }), /* @__PURE__ */ React.createElement(IconButton, { icon: "fork_right", title: "Fork Session" }), /* @__PURE__ */ React.createElement(IconButton, { icon: "view_sidebar", title: "Toggle Inspector", active: inspectorOpen, onClick: onToggleInspector }), /* @__PURE__ */ React.createElement(IconButton, { icon: "restart_alt", title: "Reset Memory" })));
+  }
+  function DiagnosticCard() {
+    const [state, setState] = React.useState("idle");
+    return /* @__PURE__ */ React.createElement(
+      Card,
+      {
+        icon: "analytics",
+        title: "Telemetry Diagnostic Report #849",
+        subtitle: "Cluster eu-west-1 • Payment Microservice Fleet",
+        actions: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(StatusPill, { status: "error", pulse: true }, "Anomaly Index: 98.4%"), /* @__PURE__ */ React.createElement(Badge, null, "P99: 2,480ms"))
+      },
+      /* @__PURE__ */ React.createElement("div", { style: { margin: "var(--space-md) 0", padding: "var(--space-md)", borderRadius: "var(--radius-control)", background: "color-mix(in srgb,var(--surface-container-lowest) 80%,transparent)" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 8, font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", textTransform: "uppercase" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--on-surface-variant)" } }, "P99 Latency Profile (Last 60 Minutes)"), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--text-accent)" } }, "Threshold Limit: 450ms")), /* @__PURE__ */ React.createElement(Sparkline, { points: LATENCY, threshold: 30 }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 4, color: "var(--on-surface-variant)", font: "600 10px/14px var(--font-core)", letterSpacing: ".08em" } }, /* @__PURE__ */ React.createElement("span", null, "13:30"), /* @__PURE__ */ React.createElement("span", null, "13:45"), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--error)" } }, "14:00 (Incident Trigger)"), /* @__PURE__ */ React.createElement("span", null, "14:15"), /* @__PURE__ */ React.createElement("span", null, "14:30 (Live)"))),
+      /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: "var(--space-md)", flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-md)", color: "var(--on-surface-variant)", font: "400 13px/20px var(--font-core)" } }, /* @__PURE__ */ React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 } }, /* @__PURE__ */ React.createElement(Icon, { name: "verified", size: 16, color: "var(--text-accent)" }), " Pre-execution simulation passed"), /* @__PURE__ */ React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 } }, /* @__PURE__ */ React.createElement(Icon, { name: "speed", size: 16, color: "var(--secondary)" }), " Est. latency recovery: 140ms")), state === "idle" ? /* @__PURE__ */ React.createElement(Button, { variant: "primary", icon: "bolt", onClick: () => {
+        setState("running");
+        setTimeout(() => setState("done"), 1800);
+      } }, "Run Auto-Remediation") : state === "running" ? /* @__PURE__ */ React.createElement(Button, { variant: "secondary", icon: "refresh" }, "Executing Remediation...") : /* @__PURE__ */ React.createElement(Button, { variant: "primary", icon: "check_circle" }, "Remediation Live & Healthy"))
+    );
+  }
+  function Inspector() {
+    const [tab, setTab] = React.useState("tools");
+    return /* @__PURE__ */ React.createElement("aside", { style: {
+      width: "var(--inspector-width)",
+      flexShrink: 0,
+      overflowY: "auto",
+      background: "color-mix(in srgb,var(--surface-container-lowest) 90%,transparent)",
+      backdropFilter: "blur(20px)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between"
+    } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-md) var(--space-md) 0" } }, /* @__PURE__ */ React.createElement(TabBar, { tabs: [{ id: "tools", label: "Tools (3)" }, { id: "memory", label: "Memory" }, { id: "params", label: "Params" }], value: tab, onChange: setTab })), tab === "tools" ? /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-md)", display: "flex", flexDirection: "column", gap: "var(--space-md)" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("span", { style: { font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", textTransform: "uppercase", color: "var(--on-surface-variant)" } }, "Active Integrated Connectors"), /* @__PURE__ */ React.createElement("span", { style: { width: 8, height: 8, borderRadius: "50%", background: "var(--primary-container)", boxShadow: "var(--glow-dot)" } })), /* @__PURE__ */ React.createElement(ConnectorRow, { icon: "database", name: "Postgres Telemetry DB", detail: "pool: payment-master-eu", meta: ["Ping: 1.2ms", "SSL/mTLS Valid"], state: "Connected" }), /* @__PURE__ */ React.createElement(ConnectorRow, { icon: "hub", name: "Kubernetes Cluster API", detail: "Namespace: prod-payments", meta: ["Nodes: 32", "Pods: 198"], state: "Active", iconColor: "var(--tertiary)" }), /* @__PURE__ */ React.createElement(ConnectorRow, { icon: "code_blocks", name: "Python Code Sandbox", detail: "Firecracker microVM v1.8", meta: ["RAM: 512MB", "Isolated"], state: "Ready", stateTone: "tertiary", iconColor: "var(--secondary)" }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", paddingBottom: "var(--space-xs)" } }, /* @__PURE__ */ React.createElement("span", { style: { font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", textTransform: "uppercase", color: "var(--on-surface-variant)" } }, "Active Directive"), /* @__PURE__ */ React.createElement(Icon, { name: "edit", size: 16, color: "var(--on-surface-variant)" })), /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-sm)", borderRadius: "var(--radius-control)", background: "var(--surface-container)", color: "var(--on-surface-variant)", font: "400 13px/20px var(--font-core)" } }, '"You are an SRE tier-3 Autonomous Operator. Prioritize high-availability, always evaluate blast radius, and execute auto-remediation scripts only after simulated idempotency verification."')), /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-md)", borderRadius: "var(--radius-control)", background: "var(--surface-container)", display: "flex", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("span", { style: { font: "600 12px/16px var(--font-core)", letterSpacing: ".06em", color: "var(--on-surface)" } }, "Context Saturation"), /* @__PURE__ */ React.createElement("span", { style: { font: "400 13px/20px var(--font-core)", color: "var(--on-surface-variant)" } }, "128,420 of 200,000")), /* @__PURE__ */ React.createElement(ProgressRing, { value: 64 }))) : /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-md)", color: "var(--on-surface-variant)", font: "400 13px/20px var(--font-core)" } }, "No source design was provided for the ", tab === "memory" ? "Memory" : "Params", " tab — left intentionally blank.")), /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-md)", background: "color-mix(in srgb,var(--surface-container) 40%,transparent)" } }, /* @__PURE__ */ React.createElement("button", { type: "button", style: {
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "var(--space-xs)",
+      padding: "var(--space-sm)",
+      border: "none",
+      borderRadius: "var(--radius-control)",
+      background: "var(--surface-container-high)",
+      color: "var(--on-surface)",
+      cursor: "pointer",
+      font: "500 12px/16px var(--font-core)",
+      letterSpacing: ".06em"
+    } }, /* @__PURE__ */ React.createElement(Icon, { name: "tune", size: 16 }), /* @__PURE__ */ React.createElement("span", null, "Configure Agent Swarm"))));
+  }
+  function ChatWorkspace2() {
+    const [inspectorOpen, setInspectorOpen] = React.useState(true);
+    const [draft, setDraft] = React.useState("");
+    const [turns, setTurns] = React.useState([]);
+    const [caps, setCaps] = React.useState({ research: true, code: true, web: false, pg: false });
+    const capList = [
+      { id: "research", label: "Deep Research", icon: "auto_awesome", active: caps.research },
+      { id: "code", label: "Code Interpreter", icon: "code", active: caps.code },
+      { id: "web", label: "Web Browsing", icon: "language", active: caps.web },
+      { id: "pg", label: "Postgres Direct", icon: "database", active: caps.pg }
+    ];
+    const send = () => {
+      if (!draft.trim()) return;
+      const text = draft;
+      setDraft("");
+      setTurns((t) => [...t, { text, replying: true }]);
+      setTimeout(() => setTurns((t) => t.map((x, i) => i === t.length - 1 ? { ...x, replying: false } : x)), 1400);
+    };
+    return /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", height: "calc(100vh - var(--topbar-height))", overflow: "hidden", background: "var(--surface)" } }, /* @__PURE__ */ React.createElement(AgentBar, { inspectorOpen, onToggleInspector: () => setInspectorOpen((o) => !o) }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flex: 1, overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { flex: 1, overflowY: "auto", padding: "var(--space-lg) var(--space-xl)", display: "flex", flexDirection: "column", gap: "var(--space-xl)" } }, /* @__PURE__ */ React.createElement(UserMessage, { author: "Chief Systems Architect", timestamp: "14:32:08 UTC" }, "Analyze the Q3 server telemetry data, identify latency anomalies in the payment pipeline, and draft a remediation script."), /* @__PURE__ */ React.createElement(AgentMessage, { mode: "Deep Reasoning", duration: "1.4s Execution" }, /* @__PURE__ */ React.createElement(Disclosure, { title: "Thought process", meta: "(Resolved in 4 stages • 1,420 ms)" }, /* @__PURE__ */ React.createElement(ReasoningStep, { label: "PostgreSQL Ingestion Node connected:" }, "Scanned table ", /* @__PURE__ */ React.createElement("code", { style: { padding: "2px 4px", borderRadius: 4, background: "var(--surface-container-highest)", font: "400 11px/16px var(--font-mono)", color: "var(--tertiary)" } }, "payment_telemetry_q3"), ". Extracted 84,290 traces across 6 clusters."), /* @__PURE__ */ React.createElement(ReasoningStep, { label: "P99 Variance Isolated:" }, "Found anomalous spike at ", /* @__PURE__ */ React.createElement("span", { style: { color: "var(--text-accent)", fontWeight: 600 } }, "2,480ms"), " in cluster ", /* @__PURE__ */ React.createElement("code", { style: { padding: "2px 4px", borderRadius: 4, background: "var(--surface-container-highest)", font: "400 11px/16px var(--font-mono)", color: "var(--secondary)" } }, "eu-west-1"), " during DB connection pool saturation."), /* @__PURE__ */ React.createElement(ReasoningStep, { label: "Synthesis of Remediation:" }, "Assembled automated script to prune idle connections, scale Redis caching tier, and apply dynamic gateway throttling.")), /* @__PURE__ */ React.createElement("div", { style: { font: "400 15px/24px var(--font-core)", color: "var(--on-surface)" } }, "Analysis complete. The anomalous latency in the payment checkout pipeline originates from synchronous read-locks on stale token records inside the ", /* @__PURE__ */ React.createElement("code", { style: { padding: "2px 6px", borderRadius: 4, background: "var(--surface-container-high)", font: "400 13px/20px var(--font-mono)", color: "var(--text-accent)" } }, "eu-west-1"), " payment cluster during concurrent invoice reconciliation runs."), /* @__PURE__ */ React.createElement(DiagnosticCard, null), /* @__PURE__ */ React.createElement(CodeBlock, { filename: "remediate_pool_contention.py", code: SCRIPT })), turns.map((t, i) => /* @__PURE__ */ React.createElement(React.Fragment, { key: i }, /* @__PURE__ */ React.createElement(UserMessage, { author: "Chief Systems Architect", timestamp: "14:38:02 UTC" }, t.text), /* @__PURE__ */ React.createElement(AgentMessage, { mode: t.replying ? "Thinking" : "Deep Reasoning", duration: t.replying ? void 0 : "0.9s Execution", actions: !t.replying }, /* @__PURE__ */ React.createElement("div", { style: { font: "400 15px/24px var(--font-core)", color: t.replying ? "var(--on-surface-variant)" : "var(--on-surface)" } }, t.replying ? "Binding connectors and planning execution…" : "Understood. I have queued that against the payment fleet and will surface a diagnostic artifact when the trace window closes."))))), /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-lg)", background: "linear-gradient(to top,var(--surface),color-mix(in srgb,var(--surface) 90%,transparent),transparent)" } }, /* @__PURE__ */ React.createElement(
+      PromptConsole,
+      {
+        value: draft,
+        onChange: (e) => setDraft(e.target.value),
+        onSubmit: send,
+        capabilities: capList,
+        onToggleCapability: (id) => setCaps((c) => ({ ...c, [id]: !c[id] })),
+        style: { maxWidth: 896 }
+      }
+    ))), inspectorOpen ? /* @__PURE__ */ React.createElement(Inspector, null) : null));
+  }
+  Object.assign(window, { ChatWorkspace: ChatWorkspace2, Inspector, AgentBar, DiagnosticCard });
+})();
+(function() {
+  const { Card, Badge, StatusPill, Button, Input, Checkbox, Radio, Icon, ConnectorRow, MetricCapsule, IconButton } = window.SuDuAI;
+  function SectionLabel({ children }) {
+    return /* @__PURE__ */ React.createElement("div", { style: { font: "600 10px/14px var(--font-core)", letterSpacing: ".08em", textTransform: "uppercase", color: "var(--on-surface-variant)" } }, children);
+  }
+  function Disclaimer({ screen }) {
+    return /* @__PURE__ */ React.createElement("div", { style: {
+      display: "flex",
+      alignItems: "flex-start",
+      gap: "var(--space-sm)",
+      padding: "var(--space-sm) var(--space-md)",
+      borderRadius: "var(--radius-control)",
+      background: "var(--surface-container-low)",
+      border: "1px dashed var(--outline-variant)",
+      color: "var(--on-surface-variant)",
+      font: "400 13px/20px var(--font-core)",
+      maxWidth: "var(--container-reading)"
+    } }, /* @__PURE__ */ React.createElement(Icon, { name: "info", size: 16, color: "var(--on-surface-variant)", style: { marginTop: 2 } }), /* @__PURE__ */ React.createElement("span", null, "No source design was provided for ", /* @__PURE__ */ React.createElement("strong", { style: { color: "var(--on-surface)" } }, screen), ". This view is assembled only from the sidebar destination and the system's own primitives — treat the layout as provisional."));
+  }
+  const AGENTS = [
+    ["AP Reconciler", "receipt_long", "Matches supplier invoices against POs and bank feeds.", "Active", "accent"],
+    ["GL Close Agent", "account_balance", "Runs month-end journals, accruals and entity eliminations.", "Active", "accent"],
+    ["Inventory Watch", "inventory_2", "Tracks stock variance and reorder thresholds per warehouse.", "Idle", "neutral"],
+    ["Payroll Auditor", "badge", "Flags anomalies across pay runs before submission.", "Ready", "tertiary"],
+    ["Tax Filing Agent", "gavel", "Prepares VAT and sales-tax returns per jurisdiction.", "Paused", "neutral"]
+  ];
+  function AgentDirectory2() {
+    const [q, setQ] = React.useState("");
+    const rows = AGENTS.filter((a) => a[0].toLowerCase().includes(q.toLowerCase()));
+    return /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-xl) var(--space-margin, 2rem)", display: "flex", flexDirection: "column", gap: "var(--space-lg)", maxWidth: "var(--container-dashboard)" } }, /* @__PURE__ */ React.createElement(Disclaimer, { screen: "Agent Directory" }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: "var(--space-md)", flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", { style: { margin: 0, font: "600 32px/40px var(--font-core)", letterSpacing: "-0.015em", color: "var(--on-surface)" } }, "Agent Directory"), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0 0", font: "400 15px/24px var(--font-core)", color: "var(--on-surface-variant)" } }, "Five agents bound to this workspace.")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement(Input, { icon: "search", placeholder: "Search agents", value: q, onChange: (e) => setQ(e.target.value), fullWidth: false, style: { width: 240 } }), /* @__PURE__ */ React.createElement(Button, { variant: "primary", icon: "add" }, "Deploy Agent"))), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))", gap: "var(--space-md)" } }, rows.map(([name, icon, desc, state, tone]) => /* @__PURE__ */ React.createElement(
+      Card,
+      {
+        key: name,
+        icon,
+        title: name,
+        interactive: true,
+        padding: "var(--space-md)",
+        actions: /* @__PURE__ */ React.createElement(Badge, { tone, shape: "square" }, state)
+      },
+      /* @__PURE__ */ React.createElement("p", { style: { margin: "0 0 var(--space-md)", font: "400 13px/20px var(--font-core)", color: "var(--on-surface-variant)" } }, desc),
+      /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement(MetricCapsule, { icon: "timer", value: "24ms" }), /* @__PURE__ */ React.createElement(MetricCapsule, { icon: "layers", value: "18k ctx", iconColor: "var(--text-accent)" }), /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }), /* @__PURE__ */ React.createElement(IconButton, { icon: "play_arrow", size: 16, title: "Run" }), /* @__PURE__ */ React.createElement(IconButton, { icon: "tune", size: 16, title: "Configure" }))
+    ))));
+  }
+  const DOCS = [
+    ["Chart of Accounts — FY26", "table_chart", "Indexed · 1,284 accounts", "Synced"],
+    ["Supplier Master", "inventory", "Indexed · 6,402 records", "Synced"],
+    ["Revenue Recognition Policy", "description", "Indexed · 24 pages", "Synced"],
+    ["EU-01 Statutory Filings", "folder", "Indexed · 112 documents", "Syncing"]
+  ];
+  function KnowledgeVault2() {
+    return /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-xl) 2rem", display: "flex", flexDirection: "column", gap: "var(--space-lg)", maxWidth: "var(--container-dashboard)" } }, /* @__PURE__ */ React.createElement(Disclaimer, { screen: "Knowledge Vault" }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", { style: { margin: 0, font: "600 32px/40px var(--font-core)", letterSpacing: "-0.015em", color: "var(--on-surface)" } }, "Knowledge Vault"), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0 0", font: "400 15px/24px var(--font-core)", color: "var(--on-surface-variant)" } }, "Grounding data the agents may read.")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 320px", gap: "var(--space-lg)", alignItems: "start" } }, /* @__PURE__ */ React.createElement(
+      Card,
+      {
+        title: "Indexed Sources",
+        subtitle: "4 collections",
+        padding: "var(--space-md)",
+        actions: /* @__PURE__ */ React.createElement(Button, { variant: "secondary", size: "sm", icon: "upload" }, "Add source")
+      },
+      /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-sm)" } }, DOCS.map(([name, icon, meta, state]) => /* @__PURE__ */ React.createElement(
+        ConnectorRow,
+        {
+          key: name,
+          icon,
+          name,
+          detail: meta,
+          state,
+          stateTone: state === "Synced" ? "accent" : "tertiary"
+        }
+      )))
+    ), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-md)" } }, /* @__PURE__ */ React.createElement(Card, { title: "Retrieval Scope", padding: "var(--space-md)" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-sm)", marginTop: "var(--space-xs)" } }, /* @__PURE__ */ React.createElement(Checkbox, { checked: true, label: "Ledger + journals", onChange: () => {
+    } }), /* @__PURE__ */ React.createElement(Checkbox, { checked: true, label: "Supplier records", onChange: () => {
+    } }), /* @__PURE__ */ React.createElement(Checkbox, { checked: false, label: "Payroll (restricted)", onChange: () => {
+    } }))), /* @__PURE__ */ React.createElement(
+      Card,
+      {
+        title: "Index Health",
+        padding: "var(--space-md)",
+        actions: /* @__PURE__ */ React.createElement(StatusPill, { status: "ok", pulse: true }, "Live")
+      },
+      /* @__PURE__ */ React.createElement("div", { style: { font: "400 13px/20px var(--font-core)", color: "var(--on-surface-variant)", marginTop: 4 } }, "Last full reindex 6 minutes ago. 7,822 embeddings current.")
+    ))));
+  }
+  function WorkspaceSettings2() {
+    const [theme, setTheme] = React.useState("dark");
+    const [autoRun, setAutoRun] = React.useState(false);
+    return /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-xl) 2rem", display: "flex", flexDirection: "column", gap: "var(--space-lg)", maxWidth: "var(--container-reading)" } }, /* @__PURE__ */ React.createElement(Disclaimer, { screen: "Workspace Settings" }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", { style: { margin: 0, font: "600 32px/40px var(--font-core)", letterSpacing: "-0.015em", color: "var(--on-surface)" } }, "Workspace Settings")), /* @__PURE__ */ React.createElement(Card, { title: "Identity", padding: "var(--space-md)" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-md)", marginTop: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(SectionLabel, null, "Workspace name"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 6 } }, /* @__PURE__ */ React.createElement(Input, { value: "Autonomous Swarm", onChange: () => {
+    } }))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(SectionLabel, null, "Default entity"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 6 } }, /* @__PURE__ */ React.createElement(Input, { value: "EU-01", onChange: () => {
+    } }))))), /* @__PURE__ */ React.createElement(Card, { title: "Appearance", subtitle: "Both themes ship from the same token set", padding: "var(--space-md)" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: "var(--space-lg)", marginTop: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement(Radio, { name: "theme", value: "dark", checked: theme === "dark", onChange: (v) => {
+      setTheme(v);
+      document.documentElement.removeAttribute("data-theme");
+    }, label: "Dark (default)" }), /* @__PURE__ */ React.createElement(Radio, { name: "theme", value: "light", checked: theme === "light", onChange: (v) => {
+      setTheme(v);
+      document.documentElement.setAttribute("data-theme", "light");
+    }, label: "Light" }))), /* @__PURE__ */ React.createElement(Card, { title: "Execution Guardrails", padding: "var(--space-md)" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "var(--space-sm)", marginTop: "var(--space-sm)" } }, /* @__PURE__ */ React.createElement(Checkbox, { checked: true, label: "Require sandbox simulation before any write", onChange: () => {
+    } }), /* @__PURE__ */ React.createElement(Checkbox, { checked: autoRun, onChange: setAutoRun, label: "Allow auto-remediation without sign-off" }), /* @__PURE__ */ React.createElement(Checkbox, { checked: true, disabled: true, label: "Log every agent action to the audit trail" })), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: "var(--space-sm)", marginTop: "var(--space-md)" } }, /* @__PURE__ */ React.createElement(Button, { variant: "primary" }, "Save changes"), /* @__PURE__ */ React.createElement(Button, { variant: "ghost" }, "Discard"))));
+  }
+  function Blank2({ label }) {
+    return /* @__PURE__ */ React.createElement("div", { style: { padding: "var(--space-xl) 2rem", maxWidth: "var(--container-reading)" } }, /* @__PURE__ */ React.createElement(Disclaimer, { screen: label }), /* @__PURE__ */ React.createElement("div", { style: { marginTop: "var(--space-lg)", height: 280, borderRadius: "var(--radius-card)", border: "1px dashed var(--outline-variant)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--outline)", font: "600 12px/16px var(--font-core)", letterSpacing: ".06em", textTransform: "uppercase" } }, label, " — intentionally blank"));
+  }
+  Object.assign(window, { AgentDirectory: AgentDirectory2, KnowledgeVault: KnowledgeVault2, WorkspaceSettings: WorkspaceSettings2, Blank: Blank2 });
+})();
+const CRUMBS = {
+  chat: ["Workspace", "Autonomous Swarm", "Active Stream"],
+  agents: ["Workspace", "Agent Directory"],
+  orchestrator: ["Workspace", "Model Orchestrator"],
+  vault: ["Workspace", "Knowledge Vault"],
+  studio: ["Workspace", "Prompt Studio"],
+  settings: ["Workspace", "Settings"]
+};
+function App() {
+  const [route, setRoute] = React.useState("chat");
+  const [theme, setTheme] = React.useState("dark");
+  const toggle = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    if (next === "light") document.documentElement.setAttribute("data-theme", "light");
+    else document.documentElement.removeAttribute("data-theme");
+  };
+  let view;
+  if (route === "chat") view = /* @__PURE__ */ React.createElement(ChatWorkspace, null);
+  else if (route === "agents") view = /* @__PURE__ */ React.createElement(AgentDirectory, null);
+  else if (route === "vault") view = /* @__PURE__ */ React.createElement(KnowledgeVault, null);
+  else if (route === "settings") view = /* @__PURE__ */ React.createElement(WorkspaceSettings, null);
+  else view = /* @__PURE__ */ React.createElement(Blank, { label: route === "orchestrator" ? "Model Orchestrator" : "Prompt Studio" });
+  return /* @__PURE__ */ React.createElement(AppShell, { route, onNavigate: setRoute, crumbs: CRUMBS[route], theme, onToggleTheme: toggle }, view);
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(App, null));
+</script>
+</body>
+</html>

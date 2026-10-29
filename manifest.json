@@ -1,0 +1,425 @@
+{
+  "manifestVersion": 3,
+  "name": "SuDu AI",
+  "namespace": "SuDuAI",
+  "files": [
+    "assets/Logos/README.md",
+    "assets/Marks/README.md",
+    "components/AgentMessage/AgentMessage.d.ts",
+    "components/AgentMessage/README.md",
+    "components/Badge/Badge.d.ts",
+    "components/Badge/README.md",
+    "components/BrandMark/BrandMark.d.ts",
+    "components/BrandMark/README.md",
+    "components/Breadcrumb/Breadcrumb.d.ts",
+    "components/Breadcrumb/README.md",
+    "components/Button/Button.d.ts",
+    "components/Button/README.md",
+    "components/Card/Card.d.ts",
+    "components/Card/README.md",
+    "components/Checkbox/Checkbox.d.ts",
+    "components/Checkbox/README.md",
+    "components/Chip/Chip.d.ts",
+    "components/Chip/README.md",
+    "components/CodeBlock/CodeBlock.d.ts",
+    "components/CodeBlock/README.md",
+    "components/ConnectorRow/ConnectorRow.d.ts",
+    "components/ConnectorRow/README.md",
+    "components/Disclosure/Disclosure.d.ts",
+    "components/Disclosure/README.md",
+    "components/Icon/Icon.d.ts",
+    "components/Icon/README.md",
+    "components/IconButton/IconButton.d.ts",
+    "components/IconButton/README.md",
+    "components/Input/Input.d.ts",
+    "components/Input/README.md",
+    "components/Logo/Logo.d.ts",
+    "components/Logo/README.md",
+    "components/LogoIcon/LogoIcon.d.ts",
+    "components/LogoIcon/README.md",
+    "components/MetricCapsule/MetricCapsule.d.ts",
+    "components/MetricCapsule/README.md",
+    "components/NavItem/NavItem.d.ts",
+    "components/NavItem/README.md",
+    "components/ProgressRing/ProgressRing.d.ts",
+    "components/ProgressRing/README.md",
+    "components/PromptConsole/PromptConsole.d.ts",
+    "components/PromptConsole/README.md",
+    "components/Radio/README.md",
+    "components/Radio/Radio.d.ts",
+    "components/ReasoningStep/README.md",
+    "components/ReasoningStep/ReasoningStep.d.ts",
+    "components/Sparkline/README.md",
+    "components/Sparkline/Sparkline.d.ts",
+    "components/StatusPill/README.md",
+    "components/StatusPill/StatusPill.d.ts",
+    "components/TabBar/README.md",
+    "components/TabBar/TabBar.d.ts",
+    "components/UserMessage/README.md",
+    "components/UserMessage/UserMessage.d.ts",
+    "components/Workspace/README.md",
+    "components/bundle.css",
+    "components/bundle.js",
+    "components/index.d.ts",
+    "tokens.css",
+    "assets/Logos/logo-dark-transparent.png",
+    "assets/Logos/logo-dark.svg",
+    "assets/Logos/logo-white-transparent.png",
+    "assets/Logos/logo-white.svg",
+    "assets/ModuleIcons/README.md",
+    "assets/ModuleIcons/catalog.json",
+    "assets/ModuleIcons/category-transfer/with-background.svg",
+    "assets/ModuleIcons/category-transfer/without-background-dark.svg",
+    "assets/ModuleIcons/category-transfer/without-background-light.svg",
+    "assets/ModuleIcons/customer-payments/with-background.svg",
+    "assets/ModuleIcons/customer-payments/without-background-dark.svg",
+    "assets/ModuleIcons/customer-payments/without-background-light.svg",
+    "assets/ModuleIcons/goods-delivery/with-background.svg",
+    "assets/ModuleIcons/goods-delivery/without-background-dark.svg",
+    "assets/ModuleIcons/goods-delivery/without-background-light.svg",
+    "assets/ModuleIcons/goods-receiving/with-background.svg",
+    "assets/ModuleIcons/goods-receiving/without-background-dark.svg",
+    "assets/ModuleIcons/goods-receiving/without-background-light.svg",
+    "assets/ModuleIcons/inventory-movement/with-background.svg",
+    "assets/ModuleIcons/inventory-movement/without-background-dark.svg",
+    "assets/ModuleIcons/inventory-movement/without-background-light.svg",
+    "assets/ModuleIcons/item-assembly/with-background.svg",
+    "assets/ModuleIcons/item-assembly/without-background-dark.svg",
+    "assets/ModuleIcons/item-assembly/without-background-light.svg",
+    "assets/ModuleIcons/item-balance/with-background.svg",
+    "assets/ModuleIcons/item-balance/without-background-dark.svg",
+    "assets/ModuleIcons/item-balance/without-background-light.svg",
+    "assets/ModuleIcons/item-disassembly/with-background.svg",
+    "assets/ModuleIcons/item-disassembly/without-background-dark.svg",
+    "assets/ModuleIcons/item-disassembly/without-background-light.svg",
+    "assets/ModuleIcons/location-transfer/with-background.svg",
+    "assets/ModuleIcons/location-transfer/without-background-dark.svg",
+    "assets/ModuleIcons/location-transfer/without-background-light.svg",
+    "assets/ModuleIcons/miscellaneous-issue/with-background.svg",
+    "assets/ModuleIcons/miscellaneous-issue/without-background-dark.svg",
+    "assets/ModuleIcons/miscellaneous-issue/without-background-light.svg",
+    "assets/ModuleIcons/miscellaneous-receipt/with-background.svg",
+    "assets/ModuleIcons/miscellaneous-receipt/without-background-dark.svg",
+    "assets/ModuleIcons/miscellaneous-receipt/without-background-light.svg",
+    "assets/ModuleIcons/packing/with-background.svg",
+    "assets/ModuleIcons/packing/without-background-dark.svg",
+    "assets/ModuleIcons/packing/without-background-light.svg",
+    "assets/ModuleIcons/picking/with-background.svg",
+    "assets/ModuleIcons/picking/without-background-dark.svg",
+    "assets/ModuleIcons/picking/without-background-light.svg",
+    "assets/ModuleIcons/plant-transfer/with-background.svg",
+    "assets/ModuleIcons/plant-transfer/without-background-dark.svg",
+    "assets/ModuleIcons/plant-transfer/without-background-light.svg",
+    "assets/ModuleIcons/purchase-invoice/with-background.svg",
+    "assets/ModuleIcons/purchase-invoice/without-background-dark.svg",
+    "assets/ModuleIcons/purchase-invoice/without-background-light.svg",
+    "assets/ModuleIcons/purchase-order/with-background.svg",
+    "assets/ModuleIcons/purchase-order/without-background-dark.svg",
+    "assets/ModuleIcons/purchase-order/without-background-light.svg",
+    "assets/ModuleIcons/purchase-requisition/with-background.svg",
+    "assets/ModuleIcons/purchase-requisition/without-background-dark.svg",
+    "assets/ModuleIcons/purchase-requisition/without-background-light.svg",
+    "assets/ModuleIcons/purchase-return/with-background.svg",
+    "assets/ModuleIcons/purchase-return/without-background-dark.svg",
+    "assets/ModuleIcons/purchase-return/without-background-light.svg",
+    "assets/ModuleIcons/putaway/with-background.svg",
+    "assets/ModuleIcons/putaway/without-background-dark.svg",
+    "assets/ModuleIcons/putaway/without-background-light.svg",
+    "assets/ModuleIcons/quotation/with-background.svg",
+    "assets/ModuleIcons/quotation/without-background-dark.svg",
+    "assets/ModuleIcons/quotation/without-background-light.svg",
+    "assets/ModuleIcons/sales-invoice/with-background.svg",
+    "assets/ModuleIcons/sales-invoice/without-background-dark.svg",
+    "assets/ModuleIcons/sales-invoice/without-background-light.svg",
+    "assets/ModuleIcons/sales-order/with-background.svg",
+    "assets/ModuleIcons/sales-order/without-background-dark.svg",
+    "assets/ModuleIcons/sales-order/without-background-light.svg",
+    "assets/ModuleIcons/sales-return-receiving/with-background.svg",
+    "assets/ModuleIcons/sales-return-receiving/without-background-dark.svg",
+    "assets/ModuleIcons/sales-return-receiving/without-background-light.svg",
+    "assets/ModuleIcons/sales-return/with-background.svg",
+    "assets/ModuleIcons/sales-return/without-background-dark.svg",
+    "assets/ModuleIcons/sales-return/without-background-light.svg",
+    "assets/ModuleIcons/stock-count/with-background.svg",
+    "assets/ModuleIcons/stock-count/without-background-dark.svg",
+    "assets/ModuleIcons/stock-count/without-background-light.svg",
+    "assets/slide-references/approved-overview.jpg",
+    "assets/slide-references/approved-slide-01.png",
+    "assets/slide-references/approved-slide-02.png",
+    "assets/slide-references/approved-slide-03.png",
+    "assets/slide-references/approved-slide-04.png",
+    "assets/slide-references/approved-slide-05.png",
+    "assets/slide-references/approved-slide-06.png",
+    "assets/slide-references/approved-slide-07.png",
+    "assets/slide-references/approved-slide-08.png",
+    "assets/slide-references/mes-design-reference.pdf",
+    "components/Charts/README.md",
+    "components/Slides/README.md",
+    "components/Slides/recipes.html",
+    "components/module-icon.js",
+    "references/slides/approved-style.md",
+    "references/slides/data-and-claims.md",
+    "local-sync.json"
+  ],
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18",
+      "global": "React"
+    },
+    {
+      "name": "react-dom",
+      "version": "18",
+      "global": "ReactDOM"
+    }
+  ],
+  "components": [
+    {
+      "name": "Logo",
+      "group": "Brand",
+      "summary": "The SuDu AI logo."
+    },
+    {
+      "name": "LogoIcon",
+      "group": "Brand",
+      "summary": "The alien head alone, cut from the primary logo — for favicons, avatars, the collapsed rail, watermarks and any square or space-constrained slot."
+    },
+    {
+      "name": "BrandMark",
+      "group": "Brand",
+      "summary": "A secondary geometric mark family — not the logo."
+    },
+    {
+      "name": "Icon",
+      "group": "Core",
+      "summary": "Renders one Material Symbols Outlined glyph — use it anywhere SuDu AI shows an icon; never hand-roll an SVG."
+    },
+    {
+      "name": "Button",
+      "group": "Core",
+      "summary": "The standard SuDu AI button; primary is the single neon accent on a view, everything else is secondary or ghost."
+    },
+    {
+      "name": "IconButton",
+      "group": "Core",
+      "summary": "Glyph-only control for utility actions where a label would add noise."
+    },
+    {
+      "name": "Chip",
+      "group": "Status",
+      "summary": "Capability switcher chip — the row above the prompt textarea."
+    },
+    {
+      "name": "Badge",
+      "group": "Status",
+      "summary": "Non-interactive metadata badge; use Chip when it is clickable."
+    },
+    {
+      "name": "StatusPill",
+      "group": "Status",
+      "summary": "Signals live system state — agent mode, engine health, anomaly alerts."
+    },
+    {
+      "name": "Input",
+      "group": "Forms",
+      "summary": "Single-line field for settings, search and naming."
+    },
+    {
+      "name": "Checkbox",
+      "group": "Forms",
+      "summary": "Multi-select control for agent permissions, connector scopes and export options."
+    },
+    {
+      "name": "Radio",
+      "group": "Forms",
+      "summary": "Single-choice control — reasoning mode, model tier, sandbox class."
+    },
+    {
+      "name": "PromptConsole",
+      "group": "Forms",
+      "summary": "The product's primary input surface — one per workspace view, docked to the bottom over a protection gradient."
+    },
+    {
+      "name": "Card",
+      "group": "Surfaces",
+      "summary": "The workspace's structural module — diagnostic artifacts, connector rows, metric panels."
+    },
+    {
+      "name": "Disclosure",
+      "group": "Surfaces",
+      "summary": "Wraps the agent's visible reasoning so users can audit each stage."
+    },
+    {
+      "name": "CodeBlock",
+      "group": "Surfaces",
+      "summary": "Shows generated scripts and tool output inside an agent message."
+    },
+    {
+      "name": "NavItem",
+      "group": "Navigation",
+      "summary": "Sidebar destination row."
+    },
+    {
+      "name": "Breadcrumb",
+      "group": "Navigation",
+      "summary": "Locates the user inside a workspace → swarm → stream hierarchy."
+    },
+    {
+      "name": "TabBar",
+      "group": "Navigation",
+      "summary": "Switches the inspector between tool, memory and parameter views."
+    },
+    {
+      "name": "MetricCapsule",
+      "group": "Data",
+      "summary": "Surfaces one operational number in a header or toolbar."
+    },
+    {
+      "name": "ProgressRing",
+      "group": "Data",
+      "summary": "Shows how full a bounded resource is."
+    },
+    {
+      "name": "Sparkline",
+      "group": "Data",
+      "summary": "The product's only chart form — a neon line over an 8%-opacity area fill."
+    },
+    {
+      "name": "UserMessage",
+      "group": "AI",
+      "summary": "The human turn in a chat stream."
+    },
+    {
+      "name": "AgentMessage",
+      "group": "AI",
+      "summary": "The agent turn."
+    },
+    {
+      "name": "ReasoningStep",
+      "group": "AI",
+      "summary": "One line of the agent's audit trail: what it did, and to what."
+    },
+    {
+      "name": "ConnectorRow",
+      "group": "AI",
+      "summary": "Lists what the agent is actually wired into — the trust surface of the product."
+    },
+    {
+      "name": "Workspace",
+      "group": "Workspace",
+      "summary": "Showcase page: a click-through recreation of the SuDu AI agent workspace, composed entirely from this system's components — use it as the reference for how the…",
+      "page": true
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "logo.svg",
+        "logo-icon.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Logos/logo.svg",
+          "id": "490e7156bc6c4583738edf32c24ba1f9"
+        },
+        {
+          "path": "assets/Logos/logo-icon.svg",
+          "id": "cec70ed61cba3e12b6eeb4676c652f72"
+        }
+      ]
+    },
+    {
+      "name": "Marks",
+      "tile": "s",
+      "order": [
+        "mark-07.svg",
+        "mark-08.svg",
+        "mark-09.svg",
+        "mark-10.svg",
+        "mark-11.svg",
+        "mark-12.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Marks/mark-07.svg",
+          "id": "63cfd73d45323a4089bb8b850a8a88d3"
+        },
+        {
+          "path": "assets/Marks/mark-08.svg",
+          "id": "45aeca6366b7abd5f305a77bc962dca8"
+        },
+        {
+          "path": "assets/Marks/mark-09.svg",
+          "id": "1c148ec315f5ca83c14e054839168bf8"
+        },
+        {
+          "path": "assets/Marks/mark-10.svg",
+          "id": "275e287b93694b44176d327c3633090c"
+        },
+        {
+          "path": "assets/Marks/mark-11.svg",
+          "id": "d6663a35031f20de1c2476602bf2a281"
+        },
+        {
+          "path": "assets/Marks/mark-12.svg",
+          "id": "35822555b7234fd14ccd8ad7439ad70e"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "files": {
+      "assets/Logos/logo-icon.svg": {
+        "store": "blob",
+        "id": "cec70ed61cba3e12b6eeb4676c652f72",
+        "bytes": 10374,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo.svg": {
+        "store": "blob",
+        "id": "490e7156bc6c4583738edf32c24ba1f9",
+        "bytes": 12255,
+        "type": "image/svg+xml"
+      },
+      "assets/Marks/mark-07.svg": {
+        "store": "blob",
+        "id": "63cfd73d45323a4089bb8b850a8a88d3",
+        "bytes": 8096,
+        "type": "image/svg+xml"
+      },
+      "assets/Marks/mark-08.svg": {
+        "store": "blob",
+        "id": "45aeca6366b7abd5f305a77bc962dca8",
+        "bytes": 8220,
+        "type": "image/svg+xml"
+      },
+      "assets/Marks/mark-09.svg": {
+        "store": "blob",
+        "id": "1c148ec315f5ca83c14e054839168bf8",
+        "bytes": 8223,
+        "type": "image/svg+xml"
+      },
+      "assets/Marks/mark-10.svg": {
+        "store": "blob",
+        "id": "275e287b93694b44176d327c3633090c",
+        "bytes": 8403,
+        "type": "image/svg+xml"
+      },
+      "assets/Marks/mark-11.svg": {
+        "store": "blob",
+        "id": "d6663a35031f20de1c2476602bf2a281",
+        "bytes": 8238,
+        "type": "image/svg+xml"
+      },
+      "assets/Marks/mark-12.svg": {
+        "store": "blob",
+        "id": "35822555b7234fd14ccd8ad7439ad70e",
+        "bytes": 8547,
+        "type": "image/svg+xml"
+      }
+    },
+    "blobBytesUsed": 72356
+  }
+}

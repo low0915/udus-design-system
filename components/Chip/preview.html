@@ -1,0 +1,27 @@
+<!-- @dsCard group="Status" height=80 subtitle="Toggleable capability chips" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Chip — preview</title>
+<style>
+  body{margin:0;padding:20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .col{display:flex;flex-direction:column;gap:14px;width:100%}
+  .cap{margin-top:8px;text-align:center;font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-variant)}
+  .row .cap{text-align:center}
+  .sep{display:inline-block;width:1px;height:20px;background:var(--surface-variant)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { Chip } = window.SuDuAI;
+function Demo() {
+  const [on, setOn] = React.useState({ research: true, code: true });
+  return /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement(Chip, { icon: "auto_awesome", selected: on.research, onClick: () => setOn((s) => ({ ...s, research: !s.research })) }, "Deep Research"), /* @__PURE__ */ React.createElement(Chip, { icon: "code", selected: on.code, onClick: () => setOn((s) => ({ ...s, code: !s.code })) }, "Code Interpreter"), /* @__PURE__ */ React.createElement(Chip, { icon: "language", onClick: () => {
+  } }, "Web Browsing"), /* @__PURE__ */ React.createElement(Chip, { icon: "database", onClick: () => {
+  } }, "Postgres Direct"));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(Demo, null));
+</script>
+</body>
+</html>

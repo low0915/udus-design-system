@@ -1,0 +1,60 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SuDu AI</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface); color:var(--on-surface); font-family:var(--font-core); overflow:hidden; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; background:var(--surface); }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .neon { fill:var(--primary-container); rx:var(--radius-card); }
+  .deep { fill:var(--secondary-container); rx:var(--radius-card); }
+  .tint { fill:var(--tertiary-container); rx:var(--radius-control); }
+  .teal { fill:var(--brand-teal); rx:var(--radius-control); }
+  .el { fill:var(--primary-container); }
+  .el.cut { fill:var(--brand-obsidian); }
+  .words { position:absolute; left:40px; bottom:40px; max-width:440px; }
+  .name { margin:0; font-size:96px; line-height:.92; font-weight:700; letter-spacing:-.03em; color:var(--on-surface); white-space:nowrap; }
+  .tag { margin:16px 0 0 4px; font-size:14px; line-height:20px; color:var(--on-surface-variant); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      primary-container 176x248 slab bled off the top (the brand neon, largest) · secondary-container 288x232 bleeding off the right (the deep teal ground block) · tertiary-container 144x40 and brand-teal 176x24 satellites · ~40% of 960x288
+  arrangement one tall neon slab with a deep block beside it and two thin satellites, space-md (16px) gutters
+  pattern     the brand's own elbow — mark-07's path, a thick bar bent 90 degrees on a rounded bend with square-cut ends, scaled to 48: 12 neon elbows on the deep block at a 64px pitch, two cut into the slab in brand-obsidian
+  scales      sides in space-md multiples; gutters space-md; pitch 64 (48 elbow + space-md); corners radius-card, satellites radius-control (half of 24)
+-->
+<rect class="neon" x="16" y="-16" width="176" height="248" rx="16"/>
+<rect class="teal" x="16" y="248" width="176" height="24" rx="12"/>
+<rect class="tint" x="336" y="-16" width="144" height="40" rx="12"/>
+<rect class="deep" x="208" y="40" width="288" height="232" rx="16"/>
+<g transform="translate(232 64) rotate(0 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(296 64) rotate(90 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(360 64) rotate(0 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(424 64) rotate(180 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(232 128) rotate(270 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(296 128) rotate(0 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(360 128) rotate(90 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(424 128) rotate(0 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(232 192) rotate(0 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(296 192) rotate(180 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(360 192) rotate(270 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(424 192) rotate(90 24 24)"><path class="el" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(40 136) rotate(0 24 24)"><path class="el cut" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+<g transform="translate(104 136) rotate(90 24 24)"><path class="el cut" transform="scale(.96)" d="M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z"/></g>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">SuDu AI</h1>
+<p class="tag">The AI-native ERP. Talk to the agent; sign off the artifact.</p>
+</div>
+</div>
+</body>
+</html>

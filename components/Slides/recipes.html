@@ -1,0 +1,86 @@
+<!-- @dsCard group="Slides" height=800 width=1360 page subtitle="Four 16:9 slide recipes: band, column, hero, data" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Slides — recipes</title>
+<style>
+  body{margin:0;padding:24px;background:#e9ece9;font-family:var(--font-core)}
+  .grid{display:grid;grid-template-columns:repeat(2,640px);gap:24px}
+  .s{position:relative;width:640px;height:360px;overflow:hidden;background:var(--brand-ivory);color:var(--brand-obsidian);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .pad{position:absolute;left:45px;top:34px;right:45px}
+  .logo{position:absolute;right:28px;top:22px}
+  .eye{font:600 8px/12px var(--font-core);letter-spacing:.1em;text-transform:uppercase;color:#3f4945;margin-bottom:10px}
+  .title{font:400 21px/26px var(--font-core);letter-spacing:-.01em;color:var(--brand-obsidian)}
+  .muted{color:#3f4945}
+  .small{font:400 9px/13px var(--font-core);color:#3f4945}
+  .band{position:absolute;left:0;right:0;bottom:0;height:118px}
+  .tl{position:absolute;left:45px;right:45px;bottom:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;color:var(--brand-ivory)}
+  .tl b{display:block;font:600 14px/18px var(--font-core)}
+  .tl span{font:400 8px/11px var(--font-core);opacity:.75}
+  .stage{position:absolute;left:45px;right:45px;bottom:132px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stage div{font:400 11px/14px var(--font-core);color:#3f4945}
+  .stage i{display:block;width:8px;height:8px;background:var(--primary-container);margin-top:10px}
+  .col{position:absolute;top:0;right:0;bottom:0;width:120px}
+  table{border-collapse:collapse;width:380px;font:400 9.5px/14px var(--font-core);color:var(--brand-obsidian)}
+  th{font:600 7px/10px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:#3f4945;text-align:left;padding:0 0 6px}
+  td{padding:5px 0;border-top:1px solid var(--edge-hairline)}
+  tr.tot td{font-weight:700;border-top:1px solid var(--brand-obsidian)}
+  .hero{position:absolute;left:0;right:0;top:0;height:250px}
+  .kpi{font:700 64px/64px var(--font-core);letter-spacing:-.03em}
+  .bub{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 22px/1 var(--font-core)}
+</style>
+</head>
+<body>
+<div class="grid">
+  <!-- 1 Band -->
+  <div class="s">
+    <div class="logo" data-logo></div>
+    <div class="pad"><div class="eye">Implementation</div><div class="title"><span class="sudu-accent">Live in four weeks,</span><br><span class="muted">not four months</span></div></div>
+    <div class="stage"><div>Week 1<i></i></div><div>Week 2<i></i></div><div>Week 3<i></i></div><div>Week 4<i></i></div></div>
+    <div class="band sudu-aurora sudu-aurora--right"></div>
+    <div class="tl"><div><b>Data mapped</b><span>SQL Account, stock master</span></div><div><b>WMS configured</b><span>Bins, zones, scanners</span></div><div><b>Agent trained</b><span>WhatsApp ordering flows</span></div><div><b>Go-live</b><span>Floor team on handhelds</span></div></div>
+  </div>
+  <!-- 2 Column -->
+  <div class="s">
+    <div class="col sudu-aurora sudu-aurora--up"></div>
+    <div class="logo" data-logo data-ink="ivory"></div>
+    <div class="pad"><div class="eye">Investment</div><div class="title">Package breakdown<br><span class="muted">SuDu WMS + AI Agent</span></div>
+      <table style="margin-top:34px"><tr><th>Module</th><th>Share</th><th>RM</th></tr>
+        <tr><td>WMS licence</td><td>46%</td><td>18,400</td></tr><tr><td>AI Agent (WhatsApp)</td><td>30%</td><td>12,000</td></tr><tr><td>Implementation</td><td>16%</td><td>6,400</td></tr><tr><td>Training</td><td>8%</td><td>3,200</td></tr>
+        <tr class="tot"><td>Total</td><td>100%</td><td>40,000</td></tr></table></div>
+  </div>
+  <!-- 3 Hero -->
+  <div class="s">
+    <div class="hero sudu-aurora sudu-aurora--right"></div>
+    <div class="logo" data-logo data-ink="ivory"></div>
+    <div class="pad" style="color:var(--brand-ivory)"><div class="eye" style="color:rgba(255,251,245,.7)">Order processing</div><div class="title" style="color:var(--brand-ivory)">Time to confirm a customer order</div></div>
+    <div style="position:absolute;left:45px;top:126px;color:var(--brand-ivory)"><div class="kpi">35 min</div><div class="small" style="color:rgba(255,251,245,.75);margin-top:6px">manual, today</div></div>
+    <div style="position:absolute;left:322px;top:156px;width:80px"><span class="sudu-speed" style="width:80px;--mark-color:var(--brand-ivory)"></span></div>
+    <div style="position:absolute;left:420px;top:126px;color:var(--brand-obsidian)"><div class="kpi">40 s</div><div class="small" style="color:var(--brand-obsidian);margin-top:6px">with the SuDu agent</div></div>
+    <div class="small" style="position:absolute;left:45px;bottom:30px">Measured across 1,240 WhatsApp orders at a pilot distributor, Aug–Sep 2026 (illustrative).</div>
+  </div>
+  <!-- 4 Data -->
+  <div class="s">
+    <div class="logo" data-logo></div>
+    <div class="pad"><div class="eye">Problem</div><div class="title" data-icon>Where order time goes</div></div>
+    <div class="bub" style="left:340px;top:96px;width:180px;height:180px;background:var(--data-1);color:var(--brand-obsidian)">70%</div>
+    <div class="bub" style="left:300px;top:216px;width:96px;height:96px;background:var(--data-2);color:var(--brand-ivory);font-size:17px">30%</div>
+    <div style="position:absolute;left:45px;top:130px;width:220px">
+      <ul class="sudu-list" style="font:400 11px/16px var(--font-core);color:var(--brand-obsidian)"><li><b>70%</b> re-keying orders from chat into the system</li><li><b>30%</b> checking stock and confirming by phone</li></ul>
+    </div>
+    <div class="sudu-elbow" style="position:absolute;right:-20px;bottom:-60px;--t:22px;width:70px;height:140px;opacity:.9"></div>
+  </div>
+</div>
+<script>
+document.documentElement.setAttribute("data-theme","light"); /* slides are always the light theme */
+var S = window.SuDuAI, h = React.createElement;
+document.querySelectorAll('[data-logo]').forEach(function(el){
+  var c = el.getAttribute('data-ink')==='ivory' ? 'var(--brand-ivory)' : 'var(--brand-obsidian)';
+  ReactDOM.createRoot(el).render(h(S.LogoIcon,{height:18,color:c}));
+});
+document.querySelectorAll('[data-icon]').forEach(function(el){
+  var wrap=document.createElement('span'); el.classList.add('sudu-title'); el.prepend(wrap);
+  ReactDOM.createRoot(wrap).render(h(S.BrandMark,{mark:'10',size:20}));
+});
+</script>
+</body>
+</html>

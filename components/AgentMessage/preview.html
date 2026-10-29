@@ -1,0 +1,21 @@
+<!-- @dsCard group="AI" height=260 subtitle="Agent turn with reasoning and actions" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>AgentMessage — preview</title>
+<style>
+  body{margin:0;padding:20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .col{display:flex;flex-direction:column;gap:14px;width:100%}
+  .cap{margin-top:8px;text-align:center;font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-variant)}
+  .row .cap{text-align:center}
+  .sep{display:inline-block;width:1px;height:20px;background:var(--surface-variant)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { AgentMessage, Disclosure, ReasoningStep } = window.SuDuAI;
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(AgentMessage, { mode: "Deep Reasoning", duration: "1.4s Execution" }, /* @__PURE__ */ React.createElement(Disclosure, { title: "Thought process", meta: "(2 stages • 840 ms)" }, /* @__PURE__ */ React.createElement(ReasoningStep, { label: "Ledger connected:" }, "Scanned 84,290 journal rows across 6 entities."), /* @__PURE__ */ React.createElement(ReasoningStep, { label: "Variance isolated:" }, "14 invoices unmatched against bank feed.")), /* @__PURE__ */ React.createElement("div", { style: { font: "400 var(--body-md-size)/var(--body-md-line) var(--font-core)", color: "var(--on-surface)" } }, "Close is staged. 398 of 412 invoices reconciled; 14 need your sign-off.")));
+</script>
+</body>
+</html>

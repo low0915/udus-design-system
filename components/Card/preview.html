@@ -1,0 +1,21 @@
+<!-- @dsCard group="Surfaces" height=150 subtitle="Glass module shell with header tile" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Card — preview</title>
+<style>
+  body{margin:0;padding:20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .col{display:flex;flex-direction:column;gap:14px;width:100%}
+  .cap{margin-top:8px;text-align:center;font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-variant)}
+  .row .cap{text-align:center}
+  .sep{display:inline-block;width:1px;height:20px;background:var(--surface-variant)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { Card, Badge } = window.SuDuAI;
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(Card, { icon: "analytics", title: "Ledger Reconciliation #849", subtitle: "EU-01 • 412 open invoices", interactive: true, actions: /* @__PURE__ */ React.createElement(Badge, { tone: "accent", shape: "square" }, "Ready"), padding: "var(--space-md)" }, /* @__PURE__ */ React.createElement("div", { style: { font: "400 var(--body-sm-size)/var(--body-sm-line) var(--font-core)", color: "var(--on-surface-variant)" } }, "398 of 412 invoices matched against the bank feed. 14 await sign-off.")));
+</script>
+</body>
+</html>

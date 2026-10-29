@@ -1,0 +1,57 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_44_742)">
+<g clip-path="url(#clip0_44_742)">
+<rect width="64" height="64" rx="16.6957" fill="url(#paint0_radial_44_742)"/>
+<rect width="64" height="64" rx="16.6957" fill="url(#paint1_radial_44_742)"/>
+<g clip-path="url(#clip1_44_742)">
+<rect x="20.5" y="38.5" width="23" height="5" rx="1.5" stroke="white"/>
+<path d="M27 31.5V34.9004C27.0002 35.2315 27.2685 35.4998 27.5996 35.5H30.5V38.5H23.5V31.5H27Z" stroke="white" stroke-linejoin="round"/>
+<mask id="path-5-inside-1_44_742" fill="white">
+<rect x="38" y="31" width="4" height="4" rx="0.25"/>
+</mask>
+<rect x="38" y="31" width="4" height="4" rx="0.25" stroke="white" stroke-width="2" mask="url(#path-5-inside-1_44_742)"/>
+<mask id="path-6-inside-2_44_742" fill="white">
+<rect x="34" y="31" width="8" height="8" rx="0.25"/>
+</mask>
+<rect x="34" y="31" width="8" height="8" rx="0.25" stroke="white" stroke-width="2" mask="url(#path-6-inside-2_44_742)"/>
+<circle cx="24" cy="41" r="0.5" stroke="white"/>
+<circle cx="40" cy="41" r="0.5" stroke="white"/>
+<circle cx="32" cy="41" r="0.5" stroke="white"/>
+<circle cx="36" cy="41" r="0.5" stroke="white"/>
+<circle cx="28" cy="41" r="0.5" stroke="white"/>
+<rect x="29.5" y="20.5" width="2" height="1" stroke="white"/>
+<path d="M33.836 22.0909H27.2677C27.0482 22.0909 26.8492 22.2202 26.76 22.4209L24.6505 27.1673C24.5508 27.3917 24.6102 27.655 24.7966 27.8148L27.7883 30.3791C28.2785 30.7993 28.9702 30.1863 28.6121 29.6492L27.4277 27.8725C27.2971 27.6766 27.3042 27.4195 27.4455 27.231L28.8612 25.3435C28.9661 25.2036 29.1308 25.1212 29.3057 25.1212H31.7804C31.9553 25.1212 32.1199 25.2036 32.2248 25.3435L33.6405 27.231C33.7819 27.4195 33.789 27.6766 33.6583 27.8725L32.2995 29.9108C31.9455 30.4418 32.6196 31.0531 33.1135 30.649L36.563 27.8267C36.7639 27.6623 36.8242 27.3805 36.7081 27.1483L34.3329 22.398C34.2388 22.2098 34.0465 22.0909 33.836 22.0909Z" stroke="white"/>
+<mask id="path-14-inside-3_44_742" fill="white">
+<rect x="28.7256" y="28.7576" width="3.63636" height="3.81818" rx="0.555556"/>
+</mask>
+<rect x="28.7256" y="28.7576" width="3.63636" height="3.81818" rx="0.555556" stroke="white" stroke-width="2" mask="url(#path-14-inside-3_44_742)"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_44_742" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.890196 0 0 0 0 0.827451 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_44_742"/>
+</filter>
+<radialGradient id="paint0_radial_44_742" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 64) rotate(-90) scale(71.8572)">
+<stop stop-color="#41E3D3"/>
+<stop offset="0.85" stop-color="#247D74"/>
+</radialGradient>
+<radialGradient id="paint1_radial_44_742" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 14.8154) rotate(90) scale(49.1846 87.8711)">
+<stop offset="0.754808" stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+<clipPath id="clip0_44_742">
+<rect width="64" height="64" rx="16.6957" fill="white"/>
+</clipPath>
+<clipPath id="clip1_44_742">
+<rect width="24" height="24" fill="white" transform="translate(20 20)"/>
+</clipPath>
+</defs>
+</svg>

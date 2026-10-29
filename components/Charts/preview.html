@@ -1,0 +1,221 @@
+<!-- @dsCard group="Slides" height=1600 width=1360 page subtitle="Chart recipes on 16:9 slides: KPIs, change bars, before/after, trend line, part-to-whole, dark trend, table bars" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Charts — recipes</title>
+<style>
+  body{margin:0;padding:24px;background:#e9ece9;font-family:var(--font-core)}
+  .grid{display:grid;grid-template-columns:repeat(2,640px);gap:24px}
+  .s{position:relative;width:640px;height:360px;overflow:hidden;background:var(--brand-ivory);color:var(--brand-obsidian);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .s.dark{background:var(--brand-obsidian);color:var(--brand-ivory)}
+  .hd{position:absolute;left:45px;top:30px;right:90px}
+  .logo{position:absolute;right:28px;top:22px}
+  .eye{font:600 8px/12px var(--font-core);letter-spacing:.1em;text-transform:uppercase;color:#3f4945;margin-bottom:8px}
+  .dark .eye{color:rgba(255,251,245,.7)}
+  .title{font:700 19px/24px var(--font-core);letter-spacing:-.01em}
+  .note{position:absolute;left:45px;bottom:16px;font:400 7.5px/10px var(--font-core);color:#3f4945}
+  .dark .note{color:rgba(255,251,245,.6)}
+  .chart{position:absolute;left:45px;right:45px;bottom:34px}
+  svg text{font-family:var(--font-core);font-variant-numeric:tabular-nums}
+  .tick{font-size:8px;fill:#3f4945}
+  .dark .tick{fill:rgba(255,251,245,.65)}
+  .lbl{font-size:9px;fill:var(--brand-obsidian);font-weight:600}
+  .dark .lbl{fill:var(--brand-ivory)}
+  .legend{display:flex;gap:16px;font:400 8.5px/12px var(--font-core);color:#3f4945;margin-bottom:8px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .tip{position:absolute;pointer-events:none;background:var(--brand-obsidian);color:var(--brand-ivory);font:500 9px/13px var(--font-core);padding:5px 8px;border-radius:6px;white-space:nowrap;opacity:0;transform:translate(-50%,-100%);margin-top:-8px;transition:opacity 80ms}
+  .dark .tip{background:var(--brand-ivory);color:var(--brand-obsidian)}
+  .tip b{font-weight:700}
+  .hit{cursor:default}
+  /* KPI */
+  .kpis{position:absolute;left:45px;right:45px;top:112px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+  .hero{font:700 68px/68px var(--font-core);letter-spacing:-.03em}
+  .unit{font:400 9px/13px var(--font-core);color:#3f4945;margin-top:8px}
+  .tile{border-top:1px solid var(--edge-hairline);padding-top:12px}
+  .tile .k{font:400 9px/13px var(--font-core);color:#3f4945}
+  .tile .v{font:600 30px/36px var(--font-core);letter-spacing:-.02em;margin:4px 0 2px}
+  .delta{font:600 9px/13px var(--font-core);color:var(--data-2)}
+  .delta span{font-weight:400;color:#3f4945}
+  /* table */
+  table{border-collapse:collapse;width:100%;font:400 10px/14px var(--font-core)}
+  th{font:600 7px/10px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:#3f4945;text-align:left;padding:0 0 6px}
+  td{padding:7px 0;border-top:1px solid var(--edge-hairline);font-variant-numeric:tabular-nums}
+  td.bar{width:46%}
+  td.bar span{display:block;height:8px;border-radius:0 4px 4px 0;background:var(--data-2)}
+  td.num{text-align:right;padding-left:12px}
+  tr.top td.bar span{background:var(--data-1)}
+</style>
+</head>
+<body>
+<div class="grid">
+  <!-- 1 KPI -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Pilot results</div><div class="title"><span class="sudu-accent">One number leads.</span> The rest support it.</div></div>
+    <div class="kpis">
+      <div><div class="hero">40 s</div><div class="unit">to confirm a WhatsApp order, down from 35 min</div></div>
+      <div class="tile"><div class="k">Orders captured by the agent</div><div class="v">1,240</div><div class="delta">▲ 18% <span>vs Aug</span></div><svg id="sp1" width="150" height="26"></svg></div>
+      <div class="tile"><div class="k">Picking errors</div><div class="v">0.4%</div><div class="delta">▼ 2.1 pts <span>vs Aug</span></div><svg id="sp2" width="150" height="26"></svg></div>
+    </div>
+    <div class="note">Illustrative figures. Delta colour = direction × whether that direction is good; both are good here.</div>
+  </div>
+  <!-- 2 Change bars -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Three months after go-live</div><div class="title">What changed</div></div>
+    <div class="chart" id="chg" style="top:92px;bottom:auto"></div>
+    <div class="note">Illustrative. Height = size of change. Solid at the base = increase; solid at the top = decrease. Signed label always shown.</div>
+  </div>
+  <!-- 3 Before / after -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Time saved</div><div class="title">Minutes per task, before and after SuDu</div></div>
+    <div class="chart" id="ba" style="top:104px"></div>
+    <div class="note">Illustrative. Context in muted grey, SuDu in teal; values at the bar tips.</div>
+  </div>
+  <!-- 4 Line -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Quality</div><div class="title" data-icon>Order accuracy since go-live</div></div>
+    <div class="chart" id="line" style="top:110px"></div>
+    <div class="note">Illustrative. Axis starts at 90%, so no area fill. Hover for weekly values.</div>
+  </div>
+  <!-- 5 Part to whole -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Where the day goes</div><div class="title">A coordinator's day, <span class="sudu-highlight">before and after</span></div></div>
+    <div class="chart" id="stack" style="top:118px"></div>
+    <div class="note">Illustrative. Two parts only: admin (muted) and selling (teal). 2px ivory gap between segments.</div>
+  </div>
+  <!-- 6 Dark trend -->
+  <div class="s dark"><div class="sudu-aurora sudu-aurora--up" style="position:absolute;right:0;top:0;bottom:0;width:64px"></div><div class="logo" data-logo data-ink="ivory"></div>
+    <div class="hd"><div class="eye">Go-live day</div><div class="title">Orders confirmed per hour</div></div>
+    <div class="chart" id="dark" style="top:104px;right:100px"></div>
+    <div class="note">Illustrative. On obsidian the neon is the line; gridlines are ivory at 12%.</div>
+  </div>
+  <!-- 7 Table bars -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Channels</div><div class="title">Where orders arrive</div></div>
+    <div class="chart" style="top:104px">
+      <table><tr><th>Channel</th><th>Share of orders</th><th style="text-align:right">Orders</th><th style="text-align:right">Share</th></tr>
+        <tr class="top"><td>WhatsApp</td><td class="bar"><span style="width:62%"></span></td><td class="num">7,688</td><td class="num">62%</td></tr>
+        <tr><td>Phone</td><td class="bar"><span style="width:18%"></span></td><td class="num">2,232</td><td class="num">18%</td></tr>
+        <tr><td>Email</td><td class="bar"><span style="width:12%"></span></td><td class="num">1,488</td><td class="num">12%</td></tr>
+        <tr><td>Sales rep visit</td><td class="bar"><span style="width:8%"></span></td><td class="num">992</td><td class="num">8%</td></tr></table>
+    </div>
+    <div class="note">Illustrative. The row the story is about takes the neon; the rest stay teal.</div>
+  </div>
+  <!-- 8 Palette -->
+  <div class="s"><div class="logo" data-logo></div>
+    <div class="hd"><div class="eye">Chart palette</div><div class="title">Few colours, used by role</div></div>
+    <div class="chart" style="top:108px;font:400 9.5px/14px var(--font-core);color:#3f4945">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+        <div><div style="height:56px;border-radius:6px;background:var(--data-2)"></div><b style="display:block;color:var(--brand-obsidian);margin-top:8px">data-2 · #00806A</b>The working series on ivory. 4.7:1, so thin lines and dots read.</div>
+        <div><div style="height:56px;border-radius:6px;background:var(--data-1)"></div><b style="display:block;color:var(--brand-obsidian);margin-top:8px">data-1 · neon</b>Highlight fill on ivory (always labelled); the line on dark.</div>
+        <div><div style="height:56px;border-radius:6px;background:var(--data-muted)"></div><b style="display:block;color:var(--brand-obsidian);margin-top:8px">data-muted</b>Context and "before" — everything that isn't the point.</div>
+        <div><div style="height:56px;border-radius:6px" class="sudu-aurora sudu-aurora--up"></div><b style="display:block;color:var(--brand-obsidian);margin-top:8px">aurora</b>Hero panels and the "ours" column; neon fades carry change bars.</div>
+      </div>
+    </div>
+    <div class="note">Text always in ink tokens, never in a data colour. Error red only for a real threshold.</div>
+  </div>
+</div>
+<script>
+document.documentElement.setAttribute("data-theme","light");
+var NS='http://www.w3.org/2000/svg';
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function txt(p,x,y,s,cls,anchor){var t=el('text',{x:x,y:y,'class':cls||'tick','text-anchor':anchor||'start'},p);t.textContent=s;return t}
+function tipFor(slide){var t=document.createElement('div');t.className='tip';slide.appendChild(t);return t}
+function showTip(tip,slide,x,y,html){var r=slide.getBoundingClientRect();tip.innerHTML=html;tip.style.left=(x-r.left)+'px';tip.style.top=(y-r.top)+'px';tip.style.opacity=1}
+function colBar(g,x,y,w,h,fill,cls){ // 4px rounded data-end, square at baseline
+  var r=Math.min(4,h,w/2);var d='M'+x+','+(y+h)+'V'+(y+r)+'Q'+x+','+y+' '+(x+r)+','+y+'H'+(x+w-r)+'Q'+(x+w)+','+y+' '+(x+w)+','+(y+r)+'V'+(y+h)+'Z';
+  return el('path',{d:d,fill:fill,'class':cls||''},g)}
+function hBar(g,x,y,w,h,fill){var r=Math.min(4,w,h/2);var d='M'+x+','+y+'H'+(x+w-r)+'Q'+(x+w)+','+y+' '+(x+w)+','+(y+r)+'V'+(y+h-r)+'Q'+(x+w)+','+(y+h)+' '+(x+w-r)+','+(y+h)+'H'+x+'Z';return el('path',{d:d,fill:fill},g)}
+
+/* sparklines */
+function spark(id,vals,goodDown){var s=document.getElementById(id),W=150,H=26,mn=Math.min.apply(0,vals),mx=Math.max.apply(0,vals);
+  var pts=vals.map(function(v,i){return [2+i*(W-8)/(vals.length-1),H-3-(v-mn)/(mx-mn)*(H-8)]});
+  el('polyline',{points:pts.map(function(p){return p.join(',')}).join(' '),fill:'none',stroke:'var(--data-muted)','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+  var l=pts[pts.length-1];el('circle',{cx:l[0],cy:l[1],r:4,fill:'var(--data-2)',stroke:'var(--brand-ivory)','stroke-width':2},s)}
+spark('sp1',[620,700,680,760,810,790,880,920,960,1010,1050,1240]);
+spark('sp2',[2.6,2.5,2.4,2.5,2.2,1.9,1.6,1.3,1.0,0.8,0.6,0.4]);
+
+/* change bars: height = |change|, gradient direction = up or down */
+(function(){var host=document.getElementById('chg'),slide=host.parentNode,tip=tipFor(slide);
+  var d=[['Order volume',30],['Throughput',50],['Picking errors',-80],['Order entry time',-90]],mx=100,H=140;
+  var row=document.createElement('div');row.style.cssText='display:grid;grid-template-columns:repeat('+d.length+',1fr);gap:8px;align-items:end;height:'+(H+40)+'px';
+  d.forEach(function(r){var v=r[1],col=document.createElement('div');col.style.cssText='display:flex;flex-direction:column;justify-content:flex-end;height:100%';
+    var lab=document.createElement('div');lab.className='sudu-bar-value';lab.textContent=(v>0?'+':'\u2212')+Math.abs(v)+'%';
+    var bar=document.createElement('div');bar.className='sudu-bar '+(v>0?'sudu-bar--up':'sudu-bar--down');bar.style.height=(Math.abs(v)/mx*H)+'px';
+    col.appendChild(lab);col.appendChild(bar);row.appendChild(col);
+    bar.addEventListener('mousemove',function(e){showTip(tip,slide,e.clientX,bar.getBoundingClientRect().top,r[0]+' · <b>'+lab.textContent+'</b>'+(v>0?' increase':' decrease'))});
+    bar.addEventListener('mouseleave',function(){tip.style.opacity=0})});
+  host.appendChild(row);
+  var cats=document.createElement('div');cats.style.cssText='display:grid;grid-template-columns:repeat('+d.length+',1fr);gap:8px;margin-top:8px;border-top:1px solid var(--edge-hairline);padding-top:6px;font:400 9px/12px var(--font-core);color:#3f4945';
+  d.forEach(function(r){var c=document.createElement('div');c.textContent=r[0];cats.appendChild(c)});host.appendChild(cats);
+})();
+
+/* before / after */
+(function(){var host=document.getElementById('ba'),slide=host.parentNode,tip=tipFor(slide);
+  host.insertAdjacentHTML('beforeend','<div class="legend"><span><i style="background:var(--data-muted)"></i>Before (manual)</span><span><i style="background:var(--data-2)"></i>With SuDu</span></div>');
+  var rows=[['Order entry',35,0.7],['Stock check',12,0.5],['Invoice match',18,2],['Delivery note',9,1]],W=550,H=190,L=84,mx=40,rowH=H/rows.length;
+  var s=el('svg',{width:W,height:H},host);var pw=W-L-40;
+  rows.forEach(function(r,i){var y=i*rowH+6;txt(s,0,y+18,r[0],'tick').setAttribute('style','font-size:9.5px;fill:var(--brand-obsidian)');
+    [[r[1],'var(--data-muted)',0],[r[2],'var(--data-2)',13]].forEach(function(b){var w=Math.max(2,b[0]/mx*pw);hBar(s,L,y+b[2],w,11,b[1]);
+      txt(s,L+w+6,y+b[2]+9,b[0]+' min',b[2]?'lbl':'tick')});
+    var hit=el('rect',{x:0,y:i*rowH,width:W,height:rowH,fill:'transparent'},s);
+    hit.addEventListener('mousemove',function(e){showTip(tip,slide,e.clientX,e.clientY,r[0]+' · '+r[1]+' min → <b>'+r[2]+' min</b>')});
+    hit.addEventListener('mouseleave',function(){tip.style.opacity=0})});
+})();
+
+/* line + area with crosshair */
+(function(){var host=document.getElementById('line'),slide=host.parentNode,tip=tipFor(slide),W=550,H=196,L=30,B=18,T=10;
+  var v=[94.1,95.0,95.6,96.4,97.0,97.4,98.1,98.3,98.8,99.0,99.2,99.4],lo=90,hi=100;
+  var s=el('svg',{width:W,height:H},host),pw=W-L-44,ph=H-B-T;
+  function X(i){return L+i*pw/(v.length-1)}function Y(val){return T+ph-(val-lo)/(hi-lo)*ph}
+  [90,95,100].forEach(function(t){el('line',{x1:L,x2:L+pw,y1:Y(t),y2:Y(t),stroke:'var(--edge-hairline)'},s);txt(s,L-6,Y(t)+3,t+'%','tick','end')});
+  v.forEach(function(_,i){if(i%2===0)txt(s,X(i),H-4,'W'+(i+1),'tick','middle')});
+  var p=v.map(function(val,i){return X(i)+','+Y(val)}).join(' ');
+  /* no area wash: the axis starts at 90%, and a filled area would exaggerate the change */
+  el('polyline',{points:p,fill:'none',stroke:'var(--data-2)','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+  var last=v.length-1;el('circle',{cx:X(last),cy:Y(v[last]),r:4,fill:'var(--data-2)',stroke:'var(--brand-ivory)','stroke-width':2},s);
+  txt(s,X(last)+8,Y(v[last])+3,'99.4%','lbl');
+  var ch=el('line',{y1:T,y2:T+ph,stroke:'var(--brand-obsidian)','stroke-opacity':.25,visibility:'hidden'},s);
+  var dot=el('circle',{r:4,fill:'var(--data-2)',stroke:'var(--brand-ivory)','stroke-width':2,visibility:'hidden'},s);
+  var hit=el('rect',{x:L,y:T,width:pw,height:ph,fill:'transparent'},s);
+  hit.addEventListener('mousemove',function(e){var r=s.getBoundingClientRect(),i=Math.round((e.clientX-r.left-L)/pw*(v.length-1));i=Math.max(0,Math.min(last,i));
+    ch.setAttribute('x1',X(i));ch.setAttribute('x2',X(i));ch.setAttribute('visibility','visible');dot.setAttribute('cx',X(i));dot.setAttribute('cy',Y(v[i]));dot.setAttribute('visibility','visible');
+    showTip(tip,slide,r.left+X(i),r.top+Y(v[i]),'Week '+(i+1)+' · <b>'+v[i]+'%</b>')});
+  hit.addEventListener('mouseleave',function(){tip.style.opacity=0;ch.setAttribute('visibility','hidden');dot.setAttribute('visibility','hidden')});
+})();
+
+/* 100% stacked */
+(function(){var host=document.getElementById('stack'),slide=host.parentNode,tip=tipFor(slide);
+  host.insertAdjacentHTML('beforeend','<div class="legend"><span><i style="background:var(--data-muted)"></i>Admin: re-keying, stock checks, chasing</span><span><i style="background:var(--data-2)"></i>Selling and customers</span></div>');
+  var rows=[['Before',70,30],['With SuDu',25,75]],W=550,H=150,L=70,pw=W-L,bh=40;
+  var s=el('svg',{width:W,height:H},host);
+  rows.forEach(function(r,i){var y=14+i*66;txt(s,0,y+bh/2+4,r[0],'tick').setAttribute('style','font-size:10px;fill:var(--brand-obsidian)');
+    var w1=r[1]/100*pw-1,w2=r[2]/100*pw-1;
+    el('rect',{x:L,y:y,width:w1,height:bh,rx:4,fill:'var(--data-muted)'},s);el('rect',{x:L+w1+2,y:y,width:w2,height:bh,rx:4,fill:'var(--data-2)'},s);
+    txt(s,L+10,y+bh/2+4,r[1]+'%','lbl');var t=txt(s,L+w1+12,y+bh/2+4,r[2]+'%','lbl');t.setAttribute('style','fill:var(--brand-ivory)');
+    var hit=el('rect',{x:L,y:y,width:pw,height:bh,fill:'transparent'},s);
+    hit.addEventListener('mousemove',function(e){showTip(tip,slide,e.clientX,e.clientY,r[0]+' · admin '+r[1]+'% · <b>selling '+r[2]+'%</b>')});
+    hit.addEventListener('mouseleave',function(){tip.style.opacity=0})});
+})();
+
+/* dark line */
+(function(){var host=document.getElementById('dark'),slide=host.parentNode,tip=tipFor(slide),W=495,H=200,L=26,B=18,T=10;
+  var hrs=['8am','9','10','11','12','1pm','2','3','4','5'],v=[12,28,46,61,58,72,84,91,88,96],mx=100;
+  var s=el('svg',{width:W,height:H},host),pw=W-L-36,ph=H-B-T;function X(i){return L+i*pw/(v.length-1)}function Y(val){return T+ph-val/mx*ph}
+  [0,50,100].forEach(function(t){el('line',{x1:L,x2:L+pw,y1:Y(t),y2:Y(t),stroke:'var(--brand-ivory)','stroke-opacity':.12},s);txt(s,L-6,Y(t)+3,t,'tick','end')});
+  hrs.forEach(function(h,i){txt(s,X(i),H-4,h,'tick','middle')});
+  var p=v.map(function(val,i){return X(i)+','+Y(val)}).join(' ');
+  el('polygon',{points:X(0)+','+Y(0)+' '+p+' '+X(v.length-1)+','+Y(0),fill:'var(--data-1)','fill-opacity':.1},s);
+  el('polyline',{points:p,fill:'none',stroke:'var(--data-1)','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+  var last=v.length-1;el('circle',{cx:X(last),cy:Y(v[last]),r:4,fill:'var(--data-1)',stroke:'var(--brand-obsidian)','stroke-width':2},s);txt(s,X(last)+8,Y(v[last])+3,'96','lbl');
+  var dot=el('circle',{r:4,fill:'var(--data-1)',stroke:'var(--brand-obsidian)','stroke-width':2,visibility:'hidden'},s);
+  var hit=el('rect',{x:L,y:T,width:pw,height:ph,fill:'transparent'},s);
+  hit.addEventListener('mousemove',function(e){var r=s.getBoundingClientRect(),i=Math.round((e.clientX-r.left-L)/pw*last);i=Math.max(0,Math.min(last,i));dot.setAttribute('cx',X(i));dot.setAttribute('cy',Y(v[i]));dot.setAttribute('visibility','visible');showTip(tip,slide,r.left+X(i),r.top+Y(v[i]),hrs[i]+' · <b>'+v[i]+'</b> orders/h')});
+  hit.addEventListener('mouseleave',function(){tip.style.opacity=0;dot.setAttribute('visibility','hidden')});
+})();
+
+/* logos and title icons */
+var S=window.SuDuAI,h=React.createElement;
+document.querySelectorAll('[data-logo]').forEach(function(e){ReactDOM.createRoot(e).render(h(S.LogoIcon,{height:18,color:e.getAttribute('data-ink')==='ivory'?'var(--brand-ivory)':'var(--brand-obsidian)'}))});
+document.querySelectorAll('[data-icon]').forEach(function(e){var w=document.createElement('span');e.classList.add('sudu-title');e.prepend(w);ReactDOM.createRoot(w).render(h(S.BrandMark,{mark:'10',size:18}))});
+</script>
+</body>
+</html>

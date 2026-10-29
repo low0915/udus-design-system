@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* SuDu AI component stylesheet. tokens.css (colours, spacing, radii, shadows, font stacks) loads first;
+   this file carries what tokens.json cannot: the type-scale variables and .type-* helpers the components read,
+   motion, composite glass borders, the ambient mesh, the icon-font class and the base reset. */
+
+/* Icon font (Material Symbols Outlined, FILL 0 / wght 400 / GRAD 0) */
+.material-symbols-outlined,.sudu-icon{font-family:"Material Symbols Outlined";font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:"liga";-webkit-font-smoothing:antialiased;font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24}
+
+/* Type scale variables — one family: Figtree */
+:root{
+  --display-lg-size:56px;      --display-lg-line:64px;      --display-lg-weight:700; --display-lg-tracking:  -0.03em;
+  --display-lg-mobile-size:36px; --display-lg-mobile-line:44px; --display-lg-mobile-weight:700; --display-lg-mobile-tracking:  -0.02em;
+  --display-sm-size:40px;      --display-sm-line:48px;      --display-sm-weight:600; --display-sm-tracking:  -0.02em;
+  --display-sm-mobile-size:28px; --display-sm-mobile-line:36px; --display-sm-mobile-weight:600; --display-sm-mobile-tracking:  -0.01em;
+  --headline-lg-size:32px;     --headline-lg-line:40px;     --headline-lg-weight:600; --headline-lg-tracking:  -0.015em;
+  --headline-lg-mobile-size:24px; --headline-lg-mobile-line:32px; --headline-lg-mobile-weight:600; --headline-lg-mobile-tracking:  -0.01em;
+  --headline-md-size:24px;     --headline-md-line:32px;     --headline-md-weight:500; --headline-md-tracking:  -0.01em;
+  --headline-sm-size:20px;     --headline-sm-line:28px;     --headline-sm-weight:500; --headline-sm-tracking:  0em;
+  --body-lg-size:18px;         --body-lg-line:28px;         --body-lg-weight:400; --body-lg-tracking:  -0.005em;
+  --body-md-size:15px;         --body-md-line:24px;         --body-md-weight:400; --body-md-tracking:  0em;
+  --body-sm-size:13px;         --body-sm-line:20px;         --body-sm-weight:400; --body-sm-tracking:  0.005em;
+  --label-lg-size:14px;        --label-lg-line:18px;        --label-lg-weight:600; --label-lg-tracking:  0.04em;
+  --label-md-size:12px;        --label-md-line:16px;        --label-md-weight:500; --label-md-tracking:  0.06em;
+  --label-sm-size:10px;        --label-sm-line:14px;        --label-sm-weight:600; --label-sm-tracking:  0.08em;
+  --mono-size:13px;            --mono-line:20px;
+}
+
+.type-display-lg{font:var(--display-lg-weight) var(--display-lg-size)/var(--display-lg-line) var(--font-core);letter-spacing:var(--display-lg-tracking)}
+.type-display-sm{font:var(--display-sm-weight) var(--display-sm-size)/var(--display-sm-line) var(--font-core);letter-spacing:var(--display-sm-tracking)}
+.type-headline-lg{font:var(--headline-lg-weight) var(--headline-lg-size)/var(--headline-lg-line) var(--font-core);letter-spacing:var(--headline-lg-tracking)}
+.type-headline-md{font:var(--headline-md-weight) var(--headline-md-size)/var(--headline-md-line) var(--font-core);letter-spacing:var(--headline-md-tracking)}
+.type-headline-sm{font:var(--headline-sm-weight) var(--headline-sm-size)/var(--headline-sm-line) var(--font-core);letter-spacing:var(--headline-sm-tracking)}
+.type-body-lg{font:var(--body-lg-weight) var(--body-lg-size)/var(--body-lg-line) var(--font-core);letter-spacing:var(--body-lg-tracking)}
+.type-body-md{font:var(--body-md-weight) var(--body-md-size)/var(--body-md-line) var(--font-core);letter-spacing:var(--body-md-tracking)}
+.type-body-sm{font:var(--body-sm-weight) var(--body-sm-size)/var(--body-sm-line) var(--font-core);letter-spacing:var(--body-sm-tracking)}
+.type-label-lg{font:var(--label-lg-weight) var(--label-lg-size)/var(--label-lg-line) var(--font-core);letter-spacing:var(--label-lg-tracking)}
+.type-label-md{font:var(--label-md-weight) var(--label-md-size)/var(--label-md-line) var(--font-core);letter-spacing:var(--label-md-tracking)}
+.type-label-sm{font:var(--label-sm-weight) var(--label-sm-size)/var(--label-sm-line) var(--font-core);letter-spacing:var(--label-sm-tracking);text-transform:uppercase}
+.type-mono{font:400 var(--mono-size)/var(--mono-line) var(--font-mono)}
+
+/* Motion: fast, tactile, no bounce */
+:root{
+   --dur-instant:100ms;
+   --dur-fast:150ms;
+   --dur-base:200ms;
+   --dur-slow:300ms;
+   --ease-standard:cubic-bezier(.2,0,0,1);
+   --ease-out:cubic-bezier(0,0,.2,1);
+   --ease-in:cubic-bezier(.4,0,1,1);
+   --lift-hover:translateY(-2px);
+   --press-scale:0.98;
+}
+@media (prefers-reduced-motion:reduce){
+  :root{
+    --dur-instant:0ms;
+    --dur-fast:0ms;
+    --dur-base:0ms;
+    --dur-slow:0ms;
+    --lift-hover:none;
+  }
+}
+
+/* Glass layer borders and the ambient mesh (composite values) */
+:root{
+  --layer-1-border:1px solid rgba(95,255,213,.12);
+  --layer-2-border:1px solid rgba(0,245,169,.25);
+  --layer-3-border:1px solid rgba(0,245,169,.6);
+  --mesh-ambient:radial-gradient(600px circle at 50% 0%,rgba(0,245,169,.04),transparent 70%);
+}
+[data-theme="light"]{
+  --layer-1-border:1px solid rgba(0,108,72,.14);
+  --layer-2-border:1px solid rgba(0,108,72,.20);
+  --layer-3-border:1px solid rgba(0,108,72,.55);
+  --mesh-ambient:radial-gradient(600px circle at 50% 0%,rgba(0,245,169,.10),transparent 70%);
+}
+
+/* Base reset */
+html,body{margin:0;padding:0}
+body{background:var(--background);color:var(--on-surface);font:var(--body-md-weight) var(--body-md-size)/var(--body-md-line) var(--font-core);letter-spacing:var(--body-md-tracking);-webkit-font-smoothing:antialiased;overscroll-behavior:none}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--text-accent);text-decoration:none;transition:color var(--dur-fast) var(--ease-standard)}
+a:hover{color:var(--primary-container)}
+::selection{background:rgba(0,245,169,.25);color:var(--on-surface)}
+code,pre{font-family:var(--font-mono)}
+::-webkit-scrollbar{width:0;height:0;display:none}
+
+/* Brand elements — the elbow from the mark family, used as type ornaments and background graphics.
+   The elbow's proportions come from mark-07: bar thickness t, outer bend radius ~1.85t, square-cut ends.
+   Colour with --mark-color (default primary-container). Decorative only: never the sole carrier of meaning. */
+:root{--mark-color:var(--primary-container)}
+
+/* Corner accent: mark-07 (the elbow, drawn from its own path) on the top-left of a title */
+.sudu-accent,.sudu-frame{position:relative;display:inline-block}
+.sudu-accent::before,.sudu-frame::before,.sudu-frame::after{content:"";position:absolute;width:.8em;height:.8em;background:var(--mark-color);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath d='M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath d='M32.15,0h17.85v17.35h-17.57c-8.32,0-15.08,6.77-15.08,15.08v17.57H0v-17.57C0,14.64,14.4.15,32.15,0h0Z'/%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none}
+.sudu-accent::before,.sudu-frame::before{left:-.62em;top:-.3em}
+/* Frame: the accent plus its mirror (mark-07 turned 180°) on the bottom-right */
+.sudu-frame::after{right:-.62em;bottom:-.24em;transform:rotate(180deg)}
+
+/* Highlight: on light grounds a flat bar behind the lower half of the words; on dark it covers the full
+   height so the brand-obsidian text sits wholly on the neon. */
+.sudu-highlight{position:relative;display:inline-block;isolation:isolate;color:var(--brand-obsidian)}
+.sudu-highlight::after{content:"";position:absolute;z-index:-1;left:-.2em;right:-.1em;top:0;bottom:0;background:var(--mark-color)}
+[data-theme="light"] .sudu-highlight::after{top:auto;bottom:.02em;height:.62em}
+
+/* Title icon: put <BrandMark mark="10"> (the cross) at ~0.9em before a heading */
+.sudu-title{display:flex;align-items:center;gap:.4em}
+
+/* Bullets: a short bar per item; .sudu-list--branch turns the first item's marker into a thin elbow
+   that hangs from the title icon above it */
+.sudu-list{list-style:none;margin:0;padding:0 0 0 1.5em}
+.sudu-list>li{position:relative;margin:.35em 0}
+.sudu-list>li::before{content:"";position:absolute;left:-1.5em;top:.62em;width:1.05em;height:.14em;border-radius:.07em;background:var(--mark-color)}
+.sudu-list--branch>li:first-child::before{top:-.85em;left:-1.5em;width:1.05em;height:1.55em;background:none;border:solid var(--mark-color);border-width:0 0 .14em .14em;border-radius:0 0 0 .6em}
+
+/* Speed lines: bars that fade in from the left — SuDu (速度) means speed */
+.sudu-speed{display:block;height:4px;border-radius:9999px;background:linear-gradient(to right,transparent,var(--mark-color))}
+.sudu-speed--soft{background:linear-gradient(to right,transparent,color-mix(in srgb,var(--mark-color) 25%,transparent))}
+
+/* Background elbow: the mark-07 bend stretched to any size. Set --t (bar thickness), width and height;
+   rotate in 90° steps for the other corners. */
+.sudu-elbow{--t:48px;border:0 solid var(--mark-color);border-top-width:var(--t);border-right-width:var(--t);border-top-right-radius:calc(var(--t)*1.85);pointer-events:none}
+
+/* Aurora — the slides' one glow gradient (slides only, never in the product UI).
+   Hue-locked to the brand green-teal and blended in OKLCH so the middle never turns grey.
+   Stops are tokens: aurora-0 (obsidian) 0% · aurora-1 38% · aurora-2 72% · aurora-3 (neon) 100%.
+   The glow end is the neon: set text only over the dark first ~40%. */
+:root{
+  --aurora-angle:110deg;
+  --aurora:linear-gradient(var(--aurora-angle),var(--aurora-0) 0%,var(--aurora-1) 38%,var(--aurora-2) 72%,var(--aurora-3) 100%);
+}
+@supports (background:linear-gradient(in oklch 90deg,#000,#fff)){
+  :root{--aurora:linear-gradient(in oklch var(--aurora-angle),var(--aurora-0) 0%,var(--aurora-1) 38%,var(--aurora-2) 72%,var(--aurora-3) 100%)}
+}
+.sudu-aurora{background:var(--aurora);color:var(--brand-ivory)}
+/* Direction helpers: where the glow sits */
+.sudu-aurora--right{--aurora-angle:110deg}  /* bottom bands, hero blocks: glow at the right */
+.sudu-aurora--up{--aurora-angle:0deg}       /* right-hand columns, bar fills: glow at the top */
+.sudu-aurora--down{--aurora-angle:180deg}   /* glow at the top-down, dark at the foot */
+
+/* Change bars — the slides' bar style. Height = size of the change; the neon fade gives the direction:
+   --up is solid at the baseline and fades upward (an increase), --down is solid at the top and fades toward
+   the baseline (a decrease). Square corners, 8px gaps, the signed value always printed above the bar
+   (the sign is the secondary channel, so direction never rests on the gradient alone). */
+.sudu-bar{--bar-color:var(--data-1);width:100%;border-radius:0}
+.sudu-bar--up{background:linear-gradient(to top,var(--bar-color) 0%,color-mix(in oklab,var(--bar-color) 45%,transparent) 55%,color-mix(in oklab,var(--bar-color) 0%,transparent) 100%)}
+.sudu-bar--down{background:linear-gradient(to bottom,var(--bar-color) 0%,color-mix(in oklab,var(--bar-color) 45%,transparent) 55%,color-mix(in oklab,var(--bar-color) 0%,transparent) 100%)}
+.sudu-bar-value{font:400 26px/1 var(--font-core);letter-spacing:-.01em;color:var(--brand-obsidian);margin:0 0 10px 2px;font-variant-numeric:normal}
+
+/* Glass grid — the second hero material on slides and marketing surfaces (never in the product UI).
+   Square frosted tiles, touching, over one off-centre neon glow and a soft halo. Figma's Glass effect
+   (Light -45deg 80%, Refraction 100, Depth 70, Frost 100) is the reference; this approximates it with
+   backdrop blur and an inset highlight: it frosts and lights the tiles but cannot refract.
+   Markup: <div class="sudu-glass-grid"> + N <i></i> tiles (cols x rows) + optional .sudu-glass-content.
+   Set --glass-cols, and --glow-x / --glow-y (centre, % of the canvas) and --glow-size (% of the width). */
+.sudu-glass-grid{--glass-cols:5;--glow-x:60%;--glow-y:60%;--glow-size:30%;--glass-tile:var(--glass-tile-light,rgba(255,255,255,.45));--glass-halo:var(--glass-halo-light,rgba(0,245,169,.22));--glass-edge:rgba(255,255,255,.75);
+  position:relative;overflow:hidden;isolation:isolate;container-type:inline-size;background:var(--brand-ivory);
+  display:grid;grid-template-columns:repeat(var(--glass-cols),1fr);align-content:center;padding:1.5%}
+.sudu-glass-grid--dark{--glass-tile:var(--glass-tile-dark,rgba(255,255,255,.06));--glass-halo:var(--glass-halo-dark,rgba(0,165,122,.6));--glass-edge:rgba(255,255,255,.22);background:var(--brand-obsidian)}
+.sudu-glass-grid::before,.sudu-glass-grid::after{content:"";position:absolute;z-index:-1;left:var(--glow-x);top:var(--glow-y);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.sudu-glass-grid::before{width:calc(var(--glow-size)*2);background:var(--glass-halo);filter:blur(12cqi)}
+.sudu-glass-grid::after{width:var(--glow-size);background:var(--glass-glow,var(--primary-container));opacity:.8;filter:blur(4cqi)}
+.sudu-glass-grid>i{display:block;aspect-ratio:1;border-radius:13.4%;background:var(--glass-tile);
+  -webkit-backdrop-filter:blur(2.4cqi) saturate(140%);backdrop-filter:blur(2.4cqi) saturate(140%);
+  box-shadow:inset .25cqi .25cqi .3cqi var(--glass-edge),inset -.2cqi -.2cqi .4cqi rgba(0,0,0,.06)}
+.sudu-glass-content{position:absolute;inset:0;z-index:1}

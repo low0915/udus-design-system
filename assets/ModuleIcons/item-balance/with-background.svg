@@ -1,0 +1,44 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_44_378)">
+<g clip-path="url(#clip0_44_378)">
+<rect width="64" height="64" rx="16.6957" fill="url(#paint0_radial_44_378)"/>
+<rect width="64" height="64" rx="16.6957" fill="url(#paint1_radial_44_378)"/>
+<g clip-path="url(#clip1_44_378)">
+<path d="M39.2008 35.6C39.2008 35.904 39.0328 36.168 38.7768 36.304L32.4568 39.856C32.3288 39.952 32.1688 40 32.0008 40C31.8328 40 31.6728 39.952 31.5448 39.856L25.2248 36.304C24.9688 36.168 24.8008 35.904 24.8008 35.6V28.4C24.8008 28.096 24.9688 27.832 25.2248 27.696L31.5448 24.144C31.6728 24.048 31.8328 24 32.0008 24C32.1688 24 32.3288 24.048 32.4568 24.144L38.7768 27.696C39.0328 27.832 39.2008 28.096 39.2008 28.4V35.6ZM32.0008 25.72L30.4888 26.576L35.2008 29.288L36.7688 28.4L32.0008 25.72ZM27.2328 28.4L32.0008 31.08L33.5688 30.2L28.8648 27.48L27.2328 28.4ZM26.4008 35.128L31.2008 37.832V32.464L26.4008 29.768V35.128ZM37.6008 35.128V29.768L32.8008 32.464V37.832L35.2008 36.48L37.6008 35.128Z" fill="white"/>
+<path d="M26 20V21.5H21.5V26H20V20H26Z" fill="white"/>
+<rect x="21.5" y="28.125" width="2" height="1.5" transform="rotate(90 21.5 28.125)" fill="white"/>
+<rect x="43.999" y="28.125" width="2" height="1.5" transform="rotate(90 43.999 28.125)" fill="white"/>
+<path d="M26 44V42.5H21.5V38H20V44H26Z" fill="white"/>
+<path d="M38 20V21.5H42.5V26H44V20H38Z" fill="white"/>
+<path d="M38 44V42.5H42.5V38H44V44H38Z" fill="white"/>
+<rect x="19.5" y="31.75" width="25" height="2.5" fill="white" stroke="#31AA9E"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_44_378" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.890196 0 0 0 0 0.827451 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_44_378"/>
+</filter>
+<radialGradient id="paint0_radial_44_378" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 64) rotate(-90) scale(71.8572)">
+<stop stop-color="#41E3D3"/>
+<stop offset="0.85" stop-color="#247D74"/>
+</radialGradient>
+<radialGradient id="paint1_radial_44_378" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 14.8154) rotate(90) scale(49.1846 87.8711)">
+<stop offset="0.754808" stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+<clipPath id="clip0_44_378">
+<rect width="64" height="64" rx="16.6957" fill="white"/>
+</clipPath>
+<clipPath id="clip1_44_378">
+<rect width="24" height="24" fill="white" transform="translate(20 20)"/>
+</clipPath>
+</defs>
+</svg>

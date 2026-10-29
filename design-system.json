@@ -1,0 +1,142 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {
+        "logo-icon.svg": {
+          "blob": "cec70ed61cba3e12b6eeb4676c652f72",
+          "name": "logo-icon.svg",
+          "size": 10374,
+          "type": "image/svg+xml"
+        },
+        "logo.svg": {
+          "blob": "490e7156bc6c4583738edf32c24ba1f9",
+          "name": "logo.svg",
+          "size": 12255,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "logo.svg",
+        "logo-icon.svg"
+      ],
+      "tile": "l"
+    },
+    "Marks": {
+      "files": {
+        "mark-07.svg": {
+          "blob": "63cfd73d45323a4089bb8b850a8a88d3",
+          "name": "mark-07.svg",
+          "size": 8096,
+          "type": "image/svg+xml"
+        },
+        "mark-08.svg": {
+          "blob": "45aeca6366b7abd5f305a77bc962dca8",
+          "name": "mark-08.svg",
+          "size": 8220,
+          "type": "image/svg+xml"
+        },
+        "mark-09.svg": {
+          "blob": "1c148ec315f5ca83c14e054839168bf8",
+          "name": "mark-09.svg",
+          "size": 8223,
+          "type": "image/svg+xml"
+        },
+        "mark-10.svg": {
+          "blob": "275e287b93694b44176d327c3633090c",
+          "name": "mark-10.svg",
+          "size": 8403,
+          "type": "image/svg+xml"
+        },
+        "mark-11.svg": {
+          "blob": "d6663a35031f20de1c2476602bf2a281",
+          "name": "mark-11.svg",
+          "size": 8238,
+          "type": "image/svg+xml"
+        },
+        "mark-12.svg": {
+          "blob": "35822555b7234fd14ccd8ad7439ad70e",
+          "name": "mark-12.svg",
+          "size": 8547,
+          "type": "image/svg+xml"
+        },
+        "mark-usage-reference.png": {
+          "name": "mark-usage-reference.png",
+          "blob": "59a5014aaa0f31b60412d93a5de41095",
+          "size": 31620,
+          "type": "image/png"
+        }
+      },
+      "name": "Marks",
+      "order": [
+        "mark-07.svg",
+        "mark-08.svg",
+        "mark-09.svg",
+        "mark-10.svg",
+        "mark-11.svg",
+        "mark-12.svg",
+        "mark-usage-reference.png"
+      ],
+      "tile": "s"
+    },
+    "Backgrounds": {
+      "files": {
+        "glass-grid-cover-light.png": {
+          "blob": "f9adee2ab55f87668a505e89e6b46e75",
+          "name": "glass-grid-cover-light.png",
+          "size": 341372,
+          "type": "image/png"
+        },
+        "glass-grid-social-dark.png": {
+          "blob": "8e7c3ae5d577ce1b78b480f4427d4788",
+          "name": "glass-grid-social-dark.png",
+          "size": 364679,
+          "type": "image/png"
+        }
+      },
+      "name": "Backgrounds",
+      "order": [
+        "glass-grid-cover-light.png",
+        "glass-grid-social-dark.png"
+      ],
+      "tile": "l"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-09-23T02:27:01Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [
+    "Logos",
+    "Marks",
+    "Backgrounds"
+  ],
+  "lastChange": {
+    "by": "Sudu",
+    "at": "2026-10-19T09:30:00Z",
+    "via": "Claude Code",
+    "note": "Glass grid: second hero material for slides and marketing (frosted touching tiles over an off-centre neon glow), with tokens, .sudu-glass-grid and Figma reference renders."
+  },
+  "layout": "files",
+  "libraries": [
+    {
+      "global": "React",
+      "name": "react",
+      "version": "18"
+    },
+    {
+      "global": "ReactDOM",
+      "name": "react-dom",
+      "version": "18"
+    }
+  ],
+  "namespace": "SuDuAI",
+  "sections": {},
+  "title": "SuDu AI"
+}

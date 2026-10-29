@@ -1,0 +1,29 @@
+<!-- @dsCard group="Brand" height=340 subtitle="The six marks, and how the elbow is used: accent, frame, highlight, title icon, bullets, speed lines, background" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>BrandMark — preview</title>
+<style>
+  body{margin:0;padding:28px 28px 20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .grid{display:grid;grid-template-columns:1.1fr .9fr 1.2fr;gap:36px;align-items:start}
+  .col{display:flex;flex-direction:column;gap:22px}
+  .t{font:500 21px/28px var(--font-core);color:var(--on-surface)}
+  .b{font:400 16px/22px var(--font-core);color:var(--on-surface)}
+  .row{display:flex;gap:14px;margin-top:10px}
+  .mk{display:flex;flex-direction:column;align-items:center}
+  .cap{margin-top:6px;font:600 10px/14px var(--font-core);letter-spacing:.08em;color:var(--on-surface-variant)}
+  .speed{display:flex;flex-direction:column;gap:4px}
+  .small{font:400 11px/16px var(--font-core);color:var(--on-surface-variant)}
+  .bg{display:flex;gap:14px;align-items:flex-end;padding-left:24px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { BrandMark } = window.SuDuAI;
+function Demo() {
+  return /* @__PURE__ */ React.createElement("div", { className: "grid" }, /* @__PURE__ */ React.createElement("div", { className: "col" }, /* @__PURE__ */ React.createElement("div", { className: "t" }, /* @__PURE__ */ React.createElement("span", { className: "sudu-accent" }, "Little element on the title.")), /* @__PURE__ */ React.createElement("div", { className: "t" }, /* @__PURE__ */ React.createElement("span", { className: "sudu-frame" }, "It can be a frame.")), /* @__PURE__ */ React.createElement("div", { className: "t" }, /* @__PURE__ */ React.createElement("span", { className: "sudu-highlight" }, "Highlighting.")), /* @__PURE__ */ React.createElement("div", { className: "row" }, ["07", "08", "09", "10", "11", "12"].map((m) => /* @__PURE__ */ React.createElement("div", { key: m, className: "mk" }, /* @__PURE__ */ React.createElement(BrandMark, { mark: m, size: 28 }), /* @__PURE__ */ React.createElement("div", { className: "cap" }, m))))), /* @__PURE__ */ React.createElement("div", { className: "col" }, /* @__PURE__ */ React.createElement("div", { className: "sudu-title t" }, /* @__PURE__ */ React.createElement(BrandMark, { mark: "10", size: 24 }), /* @__PURE__ */ React.createElement("span", null, "Icon for a title")), /* @__PURE__ */ React.createElement("ul", { className: "sudu-list sudu-list--branch b", style: { marginLeft: ".6em" } }, /* @__PURE__ */ React.createElement("li", null, "Bullet point 1"), /* @__PURE__ */ React.createElement("li", null, "Bullet point 2"), /* @__PURE__ */ React.createElement("li", null, "Bullet point 3"))), /* @__PURE__ */ React.createElement("div", { className: "col right" }, /* @__PURE__ */ React.createElement("div", { className: "speed" }, /* @__PURE__ */ React.createElement("div", { className: "small" }, "SuDu (速度) means speed"), /* @__PURE__ */ React.createElement("span", { className: "sudu-speed", style: { width: "62%" } }), /* @__PURE__ */ React.createElement("span", { className: "sudu-speed sudu-speed--soft", style: { height: 10, width: "100%", margin: "6px 0" } }), /* @__PURE__ */ React.createElement("span", { className: "sudu-speed", style: { width: "84%", marginLeft: "16%" } }), /* @__PURE__ */ React.createElement("div", { className: "small", style: { textAlign: "right" } }, "gradients carry the sense of speed")), /* @__PURE__ */ React.createElement("div", { className: "bg" }, /* @__PURE__ */ React.createElement("div", { className: "sudu-elbow", style: { "--t": "28px", width: 84, height: 150 } }), /* @__PURE__ */ React.createElement("div", { className: "t", style: { alignSelf: "flex-end" } }, "as a background element"))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(Demo, null));
+</script>
+</body>
+</html>

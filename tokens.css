@@ -1,0 +1,309 @@
+/* SuDu AI — generated from tokens.json */
+:root, [data-theme="dark"] {
+  --brand-neon: #00f5a9; /* The brand accent, identical in both themes. Live status dots, the chart line, glows. As text only on the dark ground (12.9:1 on `surface`); on light grounds it is a fill, never ink (1.4:1). */
+  --brand-teal: #5fffd5; /* Diffuse form of the accent: hover edges and hairlines at 8–25% alpha, the solid border of hovered glass. Never a fill. */
+  --brand-obsidian: #02221f; /* Deep ink for the logo and marks knocked out of a neon field. */
+  --brand-canvas: #061312; /* The outermost canvas behind the dark app shell. */
+  --brand-ivory: #fffbf5; /* Warm ivory reserved for prompt/input text and high-contrast inverse badges on dark (17.9:1 on `surface`). */
+  --surface: #081615; /* Page and conversation ground. Dark is the default theme. */
+  --surface-dim: #081615; /* Dimmed ground behind modal scrims. */
+  --surface-bright: #2e3c3a; /* Brightest surface step; hover highlight on dense rows. */
+  --surface-container-lowest: #04100f; /* Sunken wells: code blocks, chart plots, field interiors. */
+  --surface-container-low: #111e1d; /* Sidebar rail and quiet side panels. */
+  --surface-container: #152221; /* Default card fill. */
+  --surface-container-high: #1f2c2b; /* Raised tiles inside cards (the 8px icon tile of a card header), hovered chrome. */
+  --surface-container-highest: #2a3736; /* Highest ladder rung: floating menus, selected segmented tab. */
+  --surface-variant: #2a3736; /* Toolbar separators (1px bars 16–24px tall) and gauge tracks. */
+  --surface-tint: #00e29b; /* Material tint colour for tonal elevation overlays. */
+  --background: #081615; /* Document background; same as `surface`. */
+  --on-surface: #d6e6e3; /* Primary text and icons on every `surface` / `surface-container-*` step (≥9.5:1 dark, ≥14:1 light). */
+  --on-surface-variant: #b9cbbe; /* Muted text: subtitles, metadata, neutral chrome glyphs, on `surface` through `surface-container-highest` (≥8.5:1 dark, ≥7.3:1 light). */
+  --on-background: #d6e6e3; /* Text on `background`. */
+  --inverse-surface: #d6e6e3; /* Inverse fill for high-contrast tooltips and snackbars. */
+  --inverse-on-surface: #263332; /* Text on `inverse-surface`. */
+  --outline: #849589; /* Inactive glyphs and control borders. Text use on dark only (5.9:1 on `surface`); on light it is 4.3:1 — icons and borders there, not body text. */
+  --outline-variant: #3b4a41; /* Decorative dividers only; below 3:1 in both themes, so never the sole boundary of a control. */
+  --primary: #cfffe2; /* Accented text and glyphs: the active nav label, links, the accent icon (16.8:1 dark, 6.2:1 light on `surface`). */
+  --on-primary: #003824; /* Text on a `primary` fill. */
+  --primary-container: #00f5a9; /* THE brand neon as a fill, theme-invariant: primary CTA, active states. At most two or three uses per view. */
+  --on-primary-container: #006b48; /* Label text on `primary-container` (the primary button). Source value; 4.6:1 dark, 9.2:1 light. */
+  --inverse-primary: #006c48; /* Accent text on `inverse-surface`. */
+  --secondary: #adcdc8; /* Operator/person glyphs and secondary accents (10.9:1 dark, 6.2:1 light on `surface`). */
+  --on-secondary: #173532; /* Text on a `secondary` fill. */
+  --secondary-container: #2e4c48; /* Operator message bubble and quiet selected fills. */
+  --on-secondary-container: #9cbbb6; /* Text on `secondary-container`. */
+  --tertiary: #c9ffeb; /* Data and connector glyphs, 'Ready' tone (16.7:1 dark, 8.9:1 light on `surface`). */
+  --on-tertiary: #00382b; /* Text on a `tertiary` fill. */
+  --tertiary-container: #4cf0c7; /* Tertiary badge fill. */
+  --on-tertiary-container: #006a55; /* Text on `tertiary-container`. */
+  --error: #ffb4ab; /* The only non-green hue: error text, destructive icon hover, threshold rules (10.9:1 dark, 6.2:1 light on `surface`). */
+  --on-error: #690005; /* Text on an `error` fill. */
+  --error-container: #93000a; /* Danger button and degraded badge fill. */
+  --on-error-container: #ffdad6; /* Text on `error-container` (7.2:1 dark, 13.3:1 light). */
+  --primary-fixed: #49ffb6; /* Fixed primary tone, same in both themes. */
+  --primary-fixed-dim: #00e29b; /* Dimmed fixed primary; hover glyph on neon. */
+  --on-primary-fixed: #002113; /* Text on `primary-fixed`. */
+  --on-primary-fixed-variant: #005236; /* Secondary text on `primary-fixed`. */
+  --secondary-fixed: #c8e9e4; /* Fixed secondary; inline code ink on dark. */
+  --secondary-fixed-dim: #adcdc8; /* Dimmed fixed secondary. */
+  --on-secondary-fixed: #00201d; /* Text on `secondary-fixed`. */
+  --on-secondary-fixed-variant: #2e4c48; /* Secondary text on `secondary-fixed`. */
+  --tertiary-fixed: #5bfcd2; /* Fixed tertiary. */
+  --tertiary-fixed-dim: #32dfb7; /* Metric-capsule glyphs and the warning status dot (10.9:1 on dark `surface`; 1.6:1 on light — pair it with a word there). */
+  --on-tertiary-fixed: #002018; /* Text on `tertiary-fixed`. */
+  --on-tertiary-fixed-variant: #005140; /* Secondary text on `tertiary-fixed`. */
+  --text-primary: var(--on-surface); /* Semantic alias — body copy on any surface. Prefer the semantic names in product code. */
+  --text-muted: var(--on-surface-variant); /* Semantic alias — subtitles and metadata. */
+  --text-accent: var(--primary); /* Semantic alias — accented text, links, active nav labels. */
+  --text-on-accent: var(--on-primary-container); /* Semantic alias — label on the neon fill. */
+  --text-code: var(--secondary-fixed); /* Ink for code blocks and inline code on `surface-container-lowest` (14.9:1 dark, 9.3:1 light). */
+  --surface-canvas: var(--surface); /* Semantic alias — page ground. */
+  --surface-sunken: var(--surface-container-lowest); /* Semantic alias — wells and code blocks. */
+  --surface-card: var(--surface-container); /* Semantic alias — card fill. */
+  --surface-raised: var(--surface-container-high); /* Semantic alias — raised tile in a card. */
+  --surface-float: var(--surface-container-highest); /* Semantic alias — floating menus. */
+  --accent-solid: var(--primary-container); /* Semantic alias — the neon fill. */
+  --accent-glow: rgba(0,245,169,.30); /* Glow colour behind accent fills. */
+  --accent-wash: rgba(0,245,169,.10); /* Selected-chip and hover wash. */
+  --edge-hairline: rgba(95,255,213,.12); /* The default 1px chromatic border of cards and shells. Borders are never grey. */
+  --edge-hairline-strong: rgba(95,255,213,.25); /* Stronger hairline: secondary buttons, flyouts. */
+  --edge-focus: var(--brand-neon); /* Focus border: 1px, paired with the `focus-ring` glow. Never a browser outline. */
+  --field-fill: rgba(2,34,31,.4); /* Input field fill. */
+  --field-ink: var(--brand-ivory); /* Text typed into inputs and the prompt console. */
+  --field-placeholder: rgba(255,251,245,.4); /* Placeholder text in fields. Source value; low contrast by design — never put instructions in a placeholder. */
+  --badge-tertiary-ink: var(--secondary-fixed); /* Ink for tertiary-tone badges. */
+  --status-ok: var(--primary-container); /* Healthy/live status dot. A dot on light grounds is 1.4:1 — always pair it with its status word. */
+  --status-warn: var(--tertiary-fixed-dim); /* Queued/warning status dot; always with its status word. */
+  --status-error: var(--error); /* Error/anomaly status dot and text. */
+  --layer-1-bg: rgba(2,34,31,.65); /* Glass layer 1 fill (module shells, sidebar, top bar) with 16px backdrop blur. */
+  --layer-2-bg: rgba(6,26,24,.85); /* Glass layer 2 fill (flyouts, prompt console, modals) with 24px backdrop blur. */
+  --layer-1-shadow: 0 4px 20px -2px rgba(0,0,0,.4); /* Layer 1: module shells and cards. */
+  --layer-2-shadow: 0 12px 32px -4px rgba(0,0,0,.6), 0 0 16px 0 rgba(0,245,169,.08); /* Layer 2: flyouts, prompt console, modals — adds a faint neon glow. */
+  --layer-3-shadow: 0 0 24px -2px rgba(0,245,169,.22), 0 20px 40px -8px rgba(0,0,0,.8); /* Layer 3: the active command hub only. */
+  --shadow-hairline: 0 1px 8px rgba(0,0,0,.04); /* Barely-there separation for the sidebar rail. */
+  --glow-sm: 0 0 14px rgba(0,245,169,.3); /* Resting glow of the primary button. */
+  --glow-md: 0 0 20px rgba(0,245,169,.5); /* Hover glow of the primary button — the accent gets brighter, never darker. */
+  --glow-dot: 0 0 8px #00f5a9; /* Halo on live status dots. */
+  --focus-ring: 0 0 12px rgba(0,245,169,.2); /* Focus glow, paired with a 1px `edge-focus` border. */
+}
+[data-theme="light"] {
+  --surface: #f4fbf7;
+  --surface-dim: #d5dbd8;
+  --surface-bright: #f4fbf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eff6f2;
+  --surface-container: #e9f1ed;
+  --surface-container-high: #e3ebe7;
+  --surface-container-highest: #dde6e2;
+  --surface-variant: #dbe5e0;
+  --surface-tint: #006c48;
+  --background: #f4fbf7;
+  --on-surface: #171d1b;
+  --on-surface-variant: #3f4945;
+  --on-background: #171d1b;
+  --inverse-surface: #2b3230;
+  --inverse-on-surface: #ecf2ef;
+  --outline: #6f7975;
+  --outline-variant: #bfc9c4;
+  --primary: #006c48;
+  --on-primary: #ffffff;
+  --primary-container: #00f5a9;
+  --on-primary-container: #003824;
+  --inverse-primary: #49ffb6;
+  --secondary: #4a635f;
+  --on-secondary: #ffffff;
+  --secondary-container: #cce8e3;
+  --on-secondary-container: #324b48;
+  --tertiary: #00513f;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #5bfcd2;
+  --on-tertiary-container: #00382b;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #410002;
+  --text-primary: var(--on-surface);
+  --text-muted: var(--on-surface-variant);
+  --text-accent: var(--primary);
+  --text-on-accent: var(--on-primary-container);
+  --text-code: #00513f;
+  --surface-canvas: var(--surface);
+  --surface-sunken: var(--surface-container-lowest);
+  --surface-card: var(--surface-container);
+  --surface-raised: var(--surface-container-high);
+  --surface-float: var(--surface-container-highest);
+  --accent-solid: var(--primary-container);
+  --accent-glow: rgba(0,245,169,.45);
+  --accent-wash: rgba(0,108,72,.08);
+  --edge-hairline: rgba(0,108,72,.16);
+  --edge-hairline-strong: rgba(0,108,72,.32);
+  --edge-focus: #006c48;
+  --field-fill: var(--surface-container-lowest);
+  --field-ink: var(--on-surface);
+  --field-placeholder: rgba(63,73,69,.55);
+  --badge-tertiary-ink: var(--on-tertiary-container);
+  --status-ok: var(--primary-container);
+  --status-warn: var(--tertiary-fixed-dim);
+  --status-error: var(--error);
+  --layer-1-bg: rgba(255,255,255,.72);
+  --layer-2-bg: rgba(255,255,255,.88);
+  --layer-1-shadow: 0 4px 20px -6px rgba(6,40,33,.14);
+  --layer-2-shadow: 0 12px 32px -8px rgba(6,40,33,.18), 0 0 16px 0 rgba(0,245,169,.10);
+  --layer-3-shadow: 0 0 24px -4px rgba(0,245,169,.28), 0 20px 40px -12px rgba(6,40,33,.22);
+  --glow-sm: 0 0 14px rgba(0,245,169,.45);
+  --glow-md: 0 0 20px rgba(0,245,169,.6);
+}
+:root {
+  --space-xs: 0.25rem; /* 4px — icon-to-label gaps, tight stacks. */
+  --space-sm: 0.5rem; /* 8px — chip padding, row gaps. */
+  --space-md: 1rem; /* 16px — card padding, rail padding. */
+  --space-lg: 1.5rem; /* 24px — section gaps inside a panel. */
+  --space-xl: 2.5rem; /* 40px — gaps between major regions. */
+  --gutter: 1.25rem; /* Desktop grid gutter (12 columns). */
+  --gutter-mobile: 0.75rem; /* Mobile grid gutter (4 columns). */
+  --margin: 2rem; /* Minimum desktop page margin. */
+  --margin-mobile: 1rem; /* Mobile page margin. */
+  --container-reading: 840px; /* Max width of the conversation/reading column. */
+  --container-dashboard: 1440px; /* Max width of dashboard layouts. */
+  --rail-width: 288px; /* Docked primary sidebar rail. */
+  --inspector-width: 320px; /* Docked context inspector on the right. */
+  --topbar-height: 64px; /* Top bar height. */
+  --radius-sm: 0.1rem; /* 4px — inline code tags, small square badges. */
+  --radius-default: 0.25rem; /* 8px — the raised icon tile in card headers. */
+  --radius-md: 0.75rem; /* 12px — scale step equal to `radius-control`. */
+  --radius-lg: 1rem; /* 16px — scale step equal to `radius-card`. */
+  --radius-xl: 1.5rem; /* 24px — scale step equal to `radius-panel`. */
+  --radius-full: 9999px; /* Fully round: status dots, avatars. */
+  --radius-control: 0.75rem; /* Buttons, inputs, icon buttons, nav rows. */
+  --radius-card: 1rem; /* Cards and message bubbles (the user bubble squares its top-right corner to 0). */
+  --radius-panel: 1.5rem; /* Panels and the prompt console. */
+  --radius-pill: 9999px; /* Badges, chips and status pills — deliberately pill-shaped so they never read as containers. */
+  --blur-layer-1: 16px; /* Backdrop blur of glass layer 1 — only on surfaces that overlay scrolling content. */
+  --blur-layer-2: 24px; /* Backdrop blur of glass layer 2. */
+  --grid-columns-desktop: 12; /* Desktop columns (20px gutters, 32px min margins). */
+  --grid-columns-tablet: 8; /* Tablet columns; the rail condenses. */
+  --grid-columns-mobile: 4; /* Mobile columns; side panels become sheets. */
+  --font-core: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  --font-icon: "Material Symbols Outlined";
+  --text-display-lg: 700 56px/64px var(--font-core); /* Hero numbers and page-level statements. */
+  --text-display-lg-mobile: 700 36px/44px var(--font-core); /* `display-lg` below 600px. */
+  --text-display-sm: 600 40px/48px var(--font-core); /* Section openers on dashboards. */
+  --text-display-sm-mobile: 600 28px/36px var(--font-core); /* `display-sm` below 600px. */
+  --text-headline-lg: 600 32px/40px var(--font-core); /* Screen titles. */
+  --text-headline-lg-mobile: 600 24px/32px var(--font-core); /* `headline-lg` below 600px. */
+  --text-headline-md: 500 24px/32px var(--font-core); /* Panel titles. */
+  --text-headline-sm: 500 20px/28px var(--font-core); /* Card group titles, the agent name in the agent bar. */
+  --text-body-lg: 400 18px/28px var(--font-core); /* Lead paragraphs of agent output. */
+  --text-body-md: 400 15px/24px var(--font-core); /* Default body and streamed agent text. */
+  --text-body-sm: 400 13px/20px var(--font-core); /* Card subtitles, metadata, captions. */
+  --text-label-lg: 600 14px/18px var(--font-core); /* Buttons, card titles, nav labels. */
+  --text-label-md: 500 12px/16px var(--font-core); /* Chips, badges, small controls. */
+  --text-label-sm: 600 10px/14px var(--font-core); /* Section and metric headers — always set UPPERCASE. */
+  --text-mono: 400 13px/20px var(--font-mono); /* Identifiers, scripts, filenames and keyboard hints only. */
+}
+.display-lg {
+  font-family: var(--font-core);
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.display-lg-mobile {
+  font-family: var(--font-core);
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.display-sm {
+  font-family: var(--font-core);
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.display-sm-mobile {
+  font-family: var(--font-core);
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.headline-lg {
+  font-family: var(--font-core);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.headline-lg-mobile {
+  font-family: var(--font-core);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.headline-md {
+  font-family: var(--font-core);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.headline-sm {
+  font-family: var(--font-core);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: 0em;
+}
+.body-lg {
+  font-family: var(--font-core);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+.body-md {
+  font-family: var(--font-core);
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+.body-sm {
+  font-family: var(--font-core);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+.label-lg {
+  font-family: var(--font-core);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.label-md {
+  font-family: var(--font-core);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.label-sm {
+  font-family: var(--font-core);
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}

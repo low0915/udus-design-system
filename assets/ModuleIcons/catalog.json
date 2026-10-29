@@ -1,0 +1,361 @@
+{
+  "snapshotDate": "2026-10-28",
+  "fileKey": "PtcMIed2ccsdJdTcZuTITt",
+  "pageId": "43:11",
+  "canvas": {
+    "width": 64,
+    "height": 64
+  },
+  "entries": [
+    {
+      "sourceId": "37:2733",
+      "name": "Picking",
+      "setId": "44:30",
+      "glyphId": "44:15",
+      "withId": "44:20",
+      "withoutId": "44:25",
+      "slug": "picking",
+      "assets": {
+        "withBackground": "picking/with-background.svg",
+        "withoutBackgroundDark": "picking/without-background-dark.svg",
+        "withoutBackgroundLight": "picking/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2737",
+      "name": "Stock Count",
+      "setId": "44:58",
+      "glyphId": "44:37",
+      "withId": "44:44",
+      "withoutId": "44:51",
+      "slug": "stock-count",
+      "assets": {
+        "withBackground": "stock-count/with-background.svg",
+        "withoutBackgroundDark": "stock-count/without-background-dark.svg",
+        "withoutBackgroundLight": "stock-count/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2743",
+      "name": "Packing",
+      "setId": "44:82",
+      "glyphId": "44:64",
+      "withId": "44:70",
+      "withoutId": "44:76",
+      "slug": "packing",
+      "assets": {
+        "withBackground": "packing/with-background.svg",
+        "withoutBackgroundDark": "packing/without-background-dark.svg",
+        "withoutBackgroundLight": "packing/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2748",
+      "name": "Putaway",
+      "setId": "44:106",
+      "glyphId": "44:88",
+      "withId": "44:94",
+      "withoutId": "44:100",
+      "slug": "putaway",
+      "assets": {
+        "withBackground": "putaway/with-background.svg",
+        "withoutBackgroundDark": "putaway/without-background-dark.svg",
+        "withoutBackgroundLight": "putaway/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2753",
+      "name": "Location Transfer",
+      "setId": "44:154",
+      "glyphId": "44:118",
+      "withId": "44:130",
+      "withoutId": "44:142",
+      "slug": "location-transfer",
+      "assets": {
+        "withBackground": "location-transfer/with-background.svg",
+        "withoutBackgroundDark": "location-transfer/without-background-dark.svg",
+        "withoutBackgroundLight": "location-transfer/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2764",
+      "name": "Quotation",
+      "setId": "44:174",
+      "glyphId": "44:159",
+      "withId": "44:164",
+      "withoutId": "44:169",
+      "slug": "quotation",
+      "assets": {
+        "withBackground": "quotation/with-background.svg",
+        "withoutBackgroundDark": "quotation/without-background-dark.svg",
+        "withoutBackgroundLight": "quotation/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2768",
+      "name": "Sales Order",
+      "setId": "44:194",
+      "glyphId": "44:179",
+      "withId": "44:184",
+      "withoutId": "44:189",
+      "slug": "sales-order",
+      "assets": {
+        "withBackground": "sales-order/with-background.svg",
+        "withoutBackgroundDark": "sales-order/without-background-dark.svg",
+        "withoutBackgroundLight": "sales-order/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2772",
+      "name": "Goods Delivery",
+      "setId": "44:226",
+      "glyphId": "44:202",
+      "withId": "44:210",
+      "withoutId": "44:218",
+      "slug": "goods-delivery",
+      "assets": {
+        "withBackground": "goods-delivery/with-background.svg",
+        "withoutBackgroundDark": "goods-delivery/without-background-dark.svg",
+        "withoutBackgroundLight": "goods-delivery/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2779",
+      "name": "Sales Return",
+      "setId": "44:258",
+      "glyphId": "44:234",
+      "withId": "44:242",
+      "withoutId": "44:250",
+      "slug": "sales-return",
+      "assets": {
+        "withBackground": "sales-return/with-background.svg",
+        "withoutBackgroundDark": "sales-return/without-background-dark.svg",
+        "withoutBackgroundLight": "sales-return/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2786",
+      "name": "Sales Return Receiving",
+      "setId": "44:290",
+      "glyphId": "44:266",
+      "withId": "44:274",
+      "withoutId": "44:282",
+      "slug": "sales-return-receiving",
+      "assets": {
+        "withBackground": "sales-return-receiving/with-background.svg",
+        "withoutBackgroundDark": "sales-return-receiving/without-background-dark.svg",
+        "withoutBackgroundLight": "sales-return-receiving/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2793",
+      "name": "Sales Invoice",
+      "setId": "44:310",
+      "glyphId": "44:295",
+      "withId": "44:300",
+      "withoutId": "44:305",
+      "slug": "sales-invoice",
+      "assets": {
+        "withBackground": "sales-invoice/with-background.svg",
+        "withoutBackgroundDark": "sales-invoice/without-background-dark.svg",
+        "withoutBackgroundLight": "sales-invoice/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2797",
+      "name": "Customer Payments",
+      "setId": "44:338",
+      "glyphId": "44:317",
+      "withId": "44:324",
+      "withoutId": "44:331",
+      "slug": "customer-payments",
+      "assets": {
+        "withBackground": "customer-payments/with-background.svg",
+        "withoutBackgroundDark": "customer-payments/without-background-dark.svg",
+        "withoutBackgroundLight": "customer-payments/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2803",
+      "name": "Item Balance",
+      "setId": "44:418",
+      "glyphId": "44:358",
+      "withId": "44:378",
+      "withoutId": "44:398",
+      "slug": "item-balance",
+      "assets": {
+        "withBackground": "item-balance/with-background.svg",
+        "withoutBackgroundDark": "item-balance/without-background-dark.svg",
+        "withoutBackgroundLight": "item-balance/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2822",
+      "name": "Miscellaneous Issue",
+      "setId": "44:434",
+      "glyphId": "44:422",
+      "withId": "44:426",
+      "withoutId": "44:430",
+      "slug": "miscellaneous-issue",
+      "assets": {
+        "withBackground": "miscellaneous-issue/with-background.svg",
+        "withoutBackgroundDark": "miscellaneous-issue/without-background-dark.svg",
+        "withoutBackgroundLight": "miscellaneous-issue/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2825",
+      "name": "Miscellaneous Receipt",
+      "setId": "44:466",
+      "glyphId": "44:442",
+      "withId": "44:450",
+      "withoutId": "44:458",
+      "slug": "miscellaneous-receipt",
+      "assets": {
+        "withBackground": "miscellaneous-receipt/with-background.svg",
+        "withoutBackgroundDark": "miscellaneous-receipt/without-background-dark.svg",
+        "withoutBackgroundLight": "miscellaneous-receipt/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2832",
+      "name": "Category Transfer",
+      "setId": "44:514",
+      "glyphId": "44:478",
+      "withId": "44:490",
+      "withoutId": "44:502",
+      "slug": "category-transfer",
+      "assets": {
+        "withBackground": "category-transfer/with-background.svg",
+        "withoutBackgroundDark": "category-transfer/without-background-dark.svg",
+        "withoutBackgroundLight": "category-transfer/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2843",
+      "name": "Inventory Movement",
+      "setId": "44:542",
+      "glyphId": "44:521",
+      "withId": "44:528",
+      "withoutId": "44:535",
+      "slug": "inventory-movement",
+      "assets": {
+        "withBackground": "inventory-movement/with-background.svg",
+        "withoutBackgroundDark": "inventory-movement/without-background-dark.svg",
+        "withoutBackgroundLight": "inventory-movement/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2881",
+      "name": "Plant Transfer",
+      "setId": "44:586",
+      "glyphId": "44:553",
+      "withId": "44:564",
+      "withoutId": "44:575",
+      "slug": "plant-transfer",
+      "assets": {
+        "withBackground": "plant-transfer/with-background.svg",
+        "withoutBackgroundDark": "plant-transfer/without-background-dark.svg",
+        "withoutBackgroundLight": "plant-transfer/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2891",
+      "name": "Purchase Invoice",
+      "setId": "44:622",
+      "glyphId": "44:595",
+      "withId": "44:604",
+      "withoutId": "44:613",
+      "slug": "purchase-invoice",
+      "assets": {
+        "withBackground": "purchase-invoice/with-background.svg",
+        "withoutBackgroundDark": "purchase-invoice/without-background-dark.svg",
+        "withoutBackgroundLight": "purchase-invoice/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2899",
+      "name": "Purchase Return",
+      "setId": "44:650",
+      "glyphId": "44:629",
+      "withId": "44:636",
+      "withoutId": "44:643",
+      "slug": "purchase-return",
+      "assets": {
+        "withBackground": "purchase-return/with-background.svg",
+        "withoutBackgroundDark": "purchase-return/without-background-dark.svg",
+        "withoutBackgroundLight": "purchase-return/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2905",
+      "name": "Purchase Order",
+      "setId": "44:670",
+      "glyphId": "44:655",
+      "withId": "44:660",
+      "withoutId": "44:665",
+      "slug": "purchase-order",
+      "assets": {
+        "withBackground": "purchase-order/with-background.svg",
+        "withoutBackgroundDark": "purchase-order/without-background-dark.svg",
+        "withoutBackgroundLight": "purchase-order/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2909",
+      "name": "Purchase Requisition",
+      "setId": "44:694",
+      "glyphId": "44:676",
+      "withId": "44:682",
+      "withoutId": "44:688",
+      "slug": "purchase-requisition",
+      "assets": {
+        "withBackground": "purchase-requisition/with-background.svg",
+        "withoutBackgroundDark": "purchase-requisition/without-background-dark.svg",
+        "withoutBackgroundLight": "purchase-requisition/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2928",
+      "name": "Goods Receiving",
+      "setId": "44:710",
+      "glyphId": "44:698",
+      "withId": "44:702",
+      "withoutId": "44:706",
+      "slug": "goods-receiving",
+      "assets": {
+        "withBackground": "goods-receiving/with-background.svg",
+        "withoutBackgroundDark": "goods-receiving/without-background-dark.svg",
+        "withoutBackgroundLight": "goods-receiving/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2932",
+      "name": "Item Assembly",
+      "setId": "44:774",
+      "glyphId": "44:726",
+      "withId": "44:742",
+      "withoutId": "44:758",
+      "slug": "item-assembly",
+      "assets": {
+        "withBackground": "item-assembly/with-background.svg",
+        "withoutBackgroundDark": "item-assembly/without-background-dark.svg",
+        "withoutBackgroundLight": "item-assembly/without-background-light.svg"
+      }
+    },
+    {
+      "sourceId": "37:2947",
+      "name": "Item Disassembly",
+      "setId": "44:814",
+      "glyphId": "44:784",
+      "withId": "44:794",
+      "withoutId": "44:804",
+      "slug": "item-disassembly",
+      "assets": {
+        "withBackground": "item-disassembly/with-background.svg",
+        "withoutBackgroundDark": "item-disassembly/without-background-dark.svg",
+        "withoutBackgroundLight": "item-disassembly/without-background-light.svg"
+      }
+    }
+  ]
+}

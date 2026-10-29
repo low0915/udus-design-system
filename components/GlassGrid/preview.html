@@ -1,0 +1,51 @@
+<!-- @dsCard group="Slides" height=900 width=1360 page subtitle="Glass grid: frosted tiles over an off-centre neon glow, light and dark" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Glass grid</title>
+<style>
+  body{margin:0;padding:24px;background:#e9ece9;font-family:var(--font-core)}
+  .row{display:flex;gap:24px;align-items:flex-start;margin-bottom:24px}
+  .cap{font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:#3f4945;margin:0 0 8px}
+  .s169{width:640px}
+  .s11{width:360px}
+  .ref{display:block;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .c{padding:7% 7%;color:var(--brand-obsidian)}
+  .eye{font:600 9px/12px var(--font-core);letter-spacing:.1em;text-transform:uppercase;color:#006c48;margin:46px 0 8px}
+  .t{font:700 64px/1 var(--font-core);letter-spacing:-.03em}
+  .sub{font:500 15px/22px var(--font-core);color:#3f4945;margin-top:14px}
+  .dk{color:var(--brand-ivory)}
+  .dk .eye{color:var(--brand-neon);margin-top:34px}
+  .dk .t{font:700 30px/38px var(--font-core);letter-spacing:-.01em}
+  .dk .sub{color:rgba(255,251,245,.85);font-size:12px;line-height:18px;max-width:220px}
+  .url{position:absolute;left:7%;bottom:6%;font:500 9px/12px var(--font-core)}
+</style>
+</head>
+<body>
+<div class="row">
+  <div><p class="cap">CSS · light · 16:9 cover</p>
+    <div class="sudu-glass-grid s169" data-tiles="45" style="--glass-cols:9;--glow-x:73%;--glow-y:62%;--glow-size:22%">
+      <div class="sudu-glass-content c"><span data-logo></span><div class="eye">Company profile</div><div class="t">SuDu AI</div><div class="sub">AI ERP for Malaysian SMEs. Makes Life Easier.</div><div class="url">sudu.ai</div></div>
+    </div></div>
+  <div><p class="cap">CSS · dark · 1:1 social</p>
+    <div class="sudu-glass-grid sudu-glass-grid--dark s11" data-tiles="25" style="--glow-x:68%;--glow-y:72%;--glow-size:40%">
+      <div class="sudu-glass-content c dk"><span data-logo data-ink="ivory"></span><div class="eye">WhatsApp Agent</div><div class="t">Send a voice note.</div><div class="sub">SuDu AI drafts the order, you confirm.</div><div class="url">sudu.ai</div></div>
+    </div></div>
+</div>
+<div class="row">
+  <div><p class="cap">Figma reference · Glass effect · light</p><img class="ref s169" src="/_blob/f9adee2ab55f87668a505e89e6b46e75" alt="Glass grid deck cover, light"></div>
+  <div><p class="cap">Figma reference · Glass effect · dark</p><img class="ref s11" src="/_blob/8e7c3ae5d577ce1b78b480f4427d4788" alt="Glass grid social card, dark"></div>
+</div>
+<script>
+document.documentElement.setAttribute("data-theme","light");
+var S = window.SuDuAI, h = React.createElement;
+document.querySelectorAll('[data-tiles]').forEach(function(g){
+  var n = +g.getAttribute('data-tiles'), first = g.firstChild;
+  for (var i = 0; i < n; i++) g.insertBefore(document.createElement('i'), first);
+});
+document.querySelectorAll('[data-logo]').forEach(function(el){
+  var c = el.getAttribute('data-ink')==='ivory' ? 'var(--brand-ivory)' : 'var(--brand-obsidian)';
+  ReactDOM.createRoot(el).render(h(S.Logo,{height:18,color:c}));
+});
+</script>
+</body>
+</html>

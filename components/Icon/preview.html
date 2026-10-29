@@ -1,0 +1,21 @@
+<!-- @dsCard group="Core" height=80 subtitle="Material Symbols Outlined, coloured by role" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Icon — preview</title>
+<style>
+  body{margin:0;padding:20px;background:var(--surface);color:var(--on-surface);font-family:var(--font-core)}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .col{display:flex;flex-direction:column;gap:14px;width:100%}
+  .cap{margin-top:8px;text-align:center;font:600 10px/14px var(--font-core);letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-variant)}
+  .row .cap{text-align:center}
+  .sep{display:inline-block;width:1px;height:20px;background:var(--surface-variant)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var { Icon } = window.SuDuAI;
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement("div", { className: "row", style: { gap: 16 } }, /* @__PURE__ */ React.createElement(Icon, { name: "smart_toy", size: 24, color: "var(--primary)" }), /* @__PURE__ */ React.createElement(Icon, { name: "database", size: 24, color: "var(--tertiary)" }), /* @__PURE__ */ React.createElement(Icon, { name: "neurology", size: 24, color: "var(--secondary)" }), /* @__PURE__ */ React.createElement(Icon, { name: "terminal", size: 24, color: "var(--primary-container)" }), /* @__PURE__ */ React.createElement(Icon, { name: "psychology", size: 24, color: "var(--on-surface-variant)" }), /* @__PURE__ */ React.createElement("span", { className: "sep" }), /* @__PURE__ */ React.createElement(Icon, { name: "memory", size: 14, color: "var(--tertiary-fixed-dim)" }), /* @__PURE__ */ React.createElement(Icon, { name: "bolt", size: 16 }), /* @__PURE__ */ React.createElement(Icon, { name: "attach_file", size: 18 }), /* @__PURE__ */ React.createElement(Icon, { name: "settings", size: 20 }), /* @__PURE__ */ React.createElement(Icon, { name: "hub", size: 24 })));
+</script>
+</body>
+</html>
